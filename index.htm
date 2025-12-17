@@ -1,0 +1,2058 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="#/nata/xmlrpc.php">
+	<title>ZENJI</title>
+<meta name='robots' content='noindex, nofollow'>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemes.hibootstrap.com%2Fnata%2Fcrypto-coin-launch%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Fthemes.hibootstrap.com%2Fnata%2Fcrypto-coin-launch%2F&#038;format=xml">
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+	
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='hfe-widgets-style-css' href='wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=2.4.4' type='text/css' media='all'>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+
+
+
+
+.typed-cursor {
+  color: #3b82f6; /* crypto blue */
+  font-weight: 300;
+}
+
+
+.token-info {
+  background: #000;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.subtitle { opacity: .7; margin-bottom: 40px; }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.info-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 25px;
+  border: 1px solid #222;
+}
+
+.label { color: #7200f5; font-weight: 700; font-size: 1.4rem; }
+
+.contract-box {
+  max-width: 1100px;
+  margin: auto;
+  background: #0b0b0b;
+  border: 1px solid #f5c40033;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: left;
+}
+
+.contract-title { margin-bottom: 12px; display: block; }
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6a00f5;
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background: #4a00f5;
+  border-radius: 50%;
+  animation: pulse 1.4s infinite;
+}
+
+.dots::after {
+  content: "";
+  animation: dots 1.5s steps(3,end) infinite;
+}
+
+.contract-live {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chain-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.chain-badge.bsc {
+  background: #8700f5;
+  color: #000;
+}
+
+.chain-badge.eth {
+  background: #627eea;
+}
+
+code {
+  background: #111;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: .9rem;
+}
+
+button {
+  background: #a700f5;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button.copied {
+  background: #00ff9d;
+  color: #000;
+}
+
+.hidden { display: none; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(245,196,0,.5); }
+  70% { box-shadow: 0 0 0 12px rgba(245,196,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(245,196,0,0); }
+}
+
+@keyframes dots {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
+
+
+
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+
+@media (max-width: 1024px) {
+  .token-info {
+    padding: 60px 16px;
+  }
+
+  .token-info h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contract-box {
+    padding: 20px;
+  }
+
+  .contract-live {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  code {
+    width: 100%;
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .token-info h2 {
+    font-size: 1.7rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .chain-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .coming-soon {
+    font-size: 0.95rem;
+  }
+
+  code {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='ccp-frontend-style-css' href='wp-content/plugins/coin-compare/assets/css/frontend-style.css?ver=1.0' type='text/css' media='all'>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-4.7-css' href='wp-content/plugins/nata-toolkit/assets/css/font-awesome.min.css?ver=6.9' type='text/css' media='all'>
+<link rel='stylesheet' id='woocommerce-layout-css' href='wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=9.9.5' type='text/css' media='all'>
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=9.9.5' type='text/css' media='only screen and (max-width: 768px)'>
+<link rel='stylesheet' id='woocommerce-general-css' href='wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=9.9.5' type='text/css' media='all'>
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+/*# sourceURL=woocommerce-inline-inline-css */
+</style>
+<link rel='stylesheet' id='hfe-style-css' href='wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=2.4.4' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-icons-css' href='wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.43.0' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-frontend-css' href='wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.30.2' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-post-5-css' href='wp-content/uploads/elementor/css/post-5.css?ver=1752122504' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-post-1747-css' href='wp-content/uploads/elementor/css/post-1747.css?ver=1752122951' type='text/css' media='all'>
+<link rel='stylesheet' id='elementor-post-2182-css' href='wp-content/uploads/elementor/css/post-2182.css?ver=1752122951' type='text/css' media='all'>
+<link rel='stylesheet' id='brands-styles-css' href='wp-content/plugins/woocommerce/assets/css/brands.css?ver=9.9.5' type='text/css' media='all'>
+<link rel='stylesheet' id='nata-style-css' href='wp-content/themes/nata/style.css?ver=6.9' type='text/css' media='all'>
+<link rel='stylesheet' id='bootstrap-css' href='wp-content/themes/nata/assets/css/bootstrap.min.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='owl-carousel-css' href='wp-content/themes/nata/assets/css/owl.carousel.min.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='owl-theme-default-css' href='wp-content/themes/nata/assets/css/owl.theme.default.min.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='magnific-popup-css' href='wp-content/themes/nata/assets/css/magnific-popup.min.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='animate-css' href='wp-content/themes/nata/assets/css/animate.min.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='remixicon-css' href='wp-content/themes/nata/assets/css/remixicon.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='meanmenu-css' href='wp-content/themes/nata/assets/css/meanmenu.min.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='nata-woocommerce-css' href='wp-content/themes/nata/assets/css/nata-woocommerce.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='nata-main-style-css' href='wp-content/themes/nata/assets/css/nata-main-style.css?ver=1.8' type='text/css' media='all'>
+<style id='nata-main-style-inline-css' type='text/css'>
+.navbar-area { background-color: transparent ; } #wpadminbar {
+                display: none;
+            }
+/*# sourceURL=nata-main-style-inline-css */
+</style>
+<link rel='stylesheet' id='nata-blog-css' href='wp-content/themes/nata/assets/css/nata-blog.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='nata-responsive-css' href='wp-content/themes/nata/assets/css/nata-responsive.css?ver=1.8' type='text/css' media='all'>
+<link rel='stylesheet' id='nata-fonts-css' href='css?family=Roboto%3Aital%2Cwght%400%2C100%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C700%3B0%2C900%3B1%2C100%7CChanga%3A200%2C300%2C400%2C500%2C600%2C700%2C800%7CUbuntu%3A700&#038;ver=1.0.0' type='text/css' media='screen'>
+<link rel='stylesheet' id='hfe-elementor-icons-css' href='wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.34.0' type='text/css' media='all' />
+<link rel='stylesheet' id='hfe-icons-list-css' href='wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.24.3' type='text/css' media='all' />
+<link rel='stylesheet' id='hfe-social-icons-css' href='wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.24.0' type='text/css' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-brands-css' href='wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.15.3' type='text/css' media='all' />
+<link rel='stylesheet' id='hfe-social-share-icons-fontawesome-css' href='wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3' type='text/css' media='all' />
+<link rel='stylesheet' id='hfe-nav-menu-icons-css' href='wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-roboto-css' href='wp-content/uploads/elementor/google-fonts/css/roboto.css?ver=1751178031' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-gf-local-robotoslab-css' href='wp-content/uploads/elementor/google-fonts/css/robotoslab.css?ver=1751178044' type='text/css' media='all' />
+<script src="wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="jquery-js-after">
+/* <![CDATA[ */
+!function($){"use strict";$(document).ready(function(){$(this).scrollTop()>100&&$(".hfe-scroll-to-top-wrap").removeClass("hfe-scroll-to-top-hide"),$(window).scroll(function(){$(this).scrollTop()<100?$(".hfe-scroll-to-top-wrap").fadeOut(300):$(".hfe-scroll-to-top-wrap").fadeIn(300)}),$(".hfe-scroll-to-top-wrap").on("click",function(){$("html, body").animate({scrollTop:0},300);return!1})})}(jQuery);
+!function($){'use strict';$(document).ready(function(){var bar=$('.hfe-reading-progress-bar');if(!bar.length)return;$(window).on('scroll',function(){var s=$(window).scrollTop(),d=$(document).height()-$(window).height(),p=d? s/d*100:0;bar.css('width',p+'%')});});}(jQuery);
+//# sourceURL=jquery-js-after
+/* ]]> */
+</script>
+<script src="wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.9.9.5" id="jquery-blockui-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_url":"/nata/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"#/nata/cart/","is_cart":"","cart_redirect_after_add":"no"};
+//# sourceURL=wc-add-to-cart-js-extra
+/* ]]> */
+</script>
+<script src="wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.9.5" id="wc-add-to-cart-js" defer="defer" data-wp-strategy="defer"></script>
+<script src="wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.9.9.5" id="js-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_url":"/nata/?wc-ajax=%%endpoint%%","i18n_password_show":"Show password","i18n_password_hide":"Hide password"};
+//# sourceURL=woocommerce-js-extra
+/* ]]> */
+</script>
+<script src="wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.9.5" id="woocommerce-js" defer="defer" data-wp-strategy="defer"></script>
+<script src="wp-content/themes/nata/assets/js/bootstrap.bundle.min.js?ver=1.8" id="bootstrap-bundle-js"></script>
+<script src="wp-content/themes/nata/assets/js/magnific-popup.min.js?ver=1.8" id="magnific-popup-js"></script>
+<script src="wp-content/themes/nata/assets/js/wow.min.js?ver=1.8" id="wow-js"></script>
+<script src="wp-content/themes/nata/assets/js/owl.carousel.min.js?ver=1.8" id="owl-carousel-js"></script>
+<script src="wp-content/themes/nata/assets/js/jquery.ajaxchimp.min.js?ver=1.8" id="jquery-ajaxchimp-js"></script>
+<script src="wp-content/themes/nata/assets/js/echarts.min.js?ver=1.8" id="echarts-js"></script>
+<script src="wp-content/themes/nata/assets/js/meanmenu.min.js?ver=1.8" id="meanmenu-js"></script>
+<script src="wp-content/themes/nata/assets/js/ajaxchimp.min.js?ver=1.8" id="ajaxchimp-js"></script>
+<script src="wp-content/themes/nata/assets/js/nata-main.js?ver=1.8" id="nata-main-js"></script>
+<link rel="https://api.w.org/" href="wp-json/index.htm"><link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/pages/1747"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.9">
+<meta name="generator" content="WooCommerce 9.9.5">
+<link rel="canonical" href="index.htm">
+<link rel='shortlink' href='#/nata/?p=1747'>
+<meta name="generator" content="Redux 4.4.17">	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<meta name="generator" content="Elementor 3.30.2; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="wp-content/uploads/2022/11/nata-100x100.png" sizes="32x32">
+<link rel="icon" href="wp-content/uploads/2022/11/nata.png" sizes="192x192">
+<link rel="apple-touch-icon" href="wp-content/uploads/2022/11/nata.png">
+<meta name="msapplication-TileImage" content="#/nata/wp-content/uploads/2022/11/nata.png">
+<style id="nata_opt-dynamic-css" title="dynamic-css" class="redux-options-output">body{background-color:#1A1135;}:root{--mainColor:#712AF9;}:root{--mainColor2:#FA26CA;}:root{--bodyColor:#DDD6ED;}.navbar .navbar-nav .nav-item a{color:#000000;}:root{--gradColorPink:#FA26CA;}:root{--gradColorBlue:#712AF9;}:root{--gradColor1:#FDCE39;}:root{--gradColor2:#FD8963;}:root{--gradColor3:#ED5174;}.footer-area h1, .footer-area h2, .footer-area h3, .footer-area h4, .footer-area h5, .footer-area h6, .copyright-area p a{color:#FFFFFF;}body{font-size:16px;}.navbar .navbar-nav .nav-item .nav-link{font-size:16px;}</style><link rel='stylesheet' id='wc-blocks-style-css' href='wp-content/plugins/woocommerce/assets/client/blocks/wc-blocks.css?ver=wc-9.9.5' type='text/css' media='all'>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel='stylesheet' id='widget-heading-css' href='wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.30.2' type='text/css' media='all'>
+<link rel='stylesheet' id='widget-google_maps-css' href='wp-content/plugins/elementor/assets/css/widget-google_maps.min.css?ver=3.30.2' type='text/css' media='all'>
+<link rel='stylesheet' id='widget-image-css' href='wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.30.2' type='text/css' media='all'>
+</head>
+
+<body class="wp-singular page-template-default page page-id-1747 wp-theme-nata theme-nata woocommerce-no-js ehf-header ehf-footer ehf-template-nata ehf-stylesheet-nata elementor-default elementor-kit-5 elementor-page elementor-page-1747">
+<div id="page" class="hfeed site">
+
+		<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+			<p class="main-title bhf-hidden" itemprop="headline"><a href="#" title="Nata" rel="home">ZENJI</a></p>
+					<div data-elementor-type="wp-post" data-elementor-id="1598" class="elementor elementor-1598">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-cb691be elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="cb691be" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f39212e" data-id="f39212e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-c39d15d elementor-widget elementor-widget-nata_navbararea" data-id="c39d15d" data-element_type="widget" data-widget_type="nata_navbararea.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Current menu -->
+        <div class="navbar-area bg-color-140c2d " id="navbar">
+            <div class="nata-responsive-nav">
+                <div class="container">
+                    <div class="nata-responsive-menu">
+                        <div class="logo">
+                            <a href="#" class="mobile-brand">
+                                                                <img src="wp-content/uploads/logo.png" alt="ZENJI" width="120px">
+                                                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse mean-menu" id="mobileNav">
+                            <ul id="menu-header-menu" class="navbar-nav m-auto">
+                              <li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent   active "><a title="Home 🧘" href="#"  aria-haspopup="true" aria-expanded="false" >Home🧘 </a>
+
+</li>
+<li id="menu-item-172" class="menu-item menu-item-type-custom menu-item-object-custom  nav-item"><a title="Tokenomics" href="#tokenomics"  aria-haspopup="true" aria-expanded="false" class=" nav-link">Tokenomics</a>
+
+</li>
+<li id="menu-item-220" class="menu-item menu-item-type-custom menu-item-object-custom "><a title="Team" href="#team" aria-haspopup="true" aria-expanded="false" class=" nav-link">Team</a>
+
+</li>
+<li id="menu-item-391" class="menu-item menu-item-type-custom menu-item-object-custom  nav-item"><a title="Projects" href="wp-content/whitepaper/zenji_whitepaper.pdf" aria-haspopup="true" aria-expanded="false" class=" nav-link" target="_blank">Whitepaper</a>
+
+
+</ul>                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nata-nav navbar navbar-expand-lg">
+                <div class="container-fluid">
+                                            <a class="navbar-brand" href="#">
+                                                            <img src="wp-content/uploads/logo.png" alt="ZENJI" width="120px">
+                                                    </a>
+                    
+                    <button class="navbar-toggler menu-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <ul id="menu-header-menu-1" class="navbar-nav nav-alignment m-auto"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown active menu-item-480 nav-item"><a title="Home" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class=" nav-link" id="menu-item-dropdown-480">Home🧘</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-480" role="menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-17 nav-item"><a title="Zenji Whitepaper" href="wp-content/whitepaper/zenji_whitepaper.pdf" class="dropdown-item" target="_blank">Whitepaper</a></li>
+</ul>
+</li>
+
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-220 nav-item"><a title="Tokenomics" href="#tokenomics"  aria-haspopup="true" aria-expanded="false" class=" nav-link" >Tokenomics</a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-220" role="menu">
+
+
+</ul>
+
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-391 nav-item">
+    <a title="Projects" href="#team" class="nav-link">Team</a>
+</li>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-391" role="menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-285 nav-item"><a title="Projects" href="#" class="dropdown-item">Coming soon</a></li>
+	
+</ul>
+</li>
+
+<li class="clickable-parent menu-item menu-item-type-post_type menu-item-object-page menu-item-23 nav-item"><a title="Contact" href="#blog" class="nav-link">Blog</a></li>
+</ul>                    </div>
+
+                    <div class="others-option d-flex align-items-center">
+                                                            <div class="option-item">
+                                     
+                            
+                                            
+                                
+                                                    <div class="option-item">
+                                <button class="side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                              <i class="fas fa-stream"></i>
+
+                                </button>
+                            </div>
+                        
+                    </div>
+                </div>
+            </nav>
+
+                            <div class="others-option-for-responsive">
+                    <div class="container">
+                        <div class="dot-menu">
+                            <div class="inner">
+                                <div class="circle circle-one"></div>
+                                <div class="circle circle-two"></div>
+                                <div class="circle circle-three"></div>
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="option-inner">
+                                <div class="others-option">
+                                                            
+                                        
+                
+                                            
+                                                                            <div class="option-item">
+                                            <button class="side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                            <i class="fas fa-stream"></i>
+                                            </button>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                    </div>
+
+                    <div class="offcanvas-area offcanvas offcanvas-end  " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                        <a class="navbar-brand" href="#">
+                            <img src="wp-content/uploads/logo.png" alt="ZENJI" width="120px"> 
+                                                    </a>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+                    		<div data-elementor-type="wp-post" data-elementor-id="1562" class="elementor elementor-1562">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-9758758 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9758758" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7828bce" data-id="7828bce" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-a921bd4 offcanvas-about elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a921bd4" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-e69d0a7" data-id="e69d0a7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-11313fc elementor-widget elementor-widget-heading" data-id="11313fc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">About Us</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-79dfa54 elementor-widget elementor-widget-text-editor" data-id="79dfa54" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p">Forged under the rising red sun of Japan, $ZENJI represents discipline, humor, and focus, the three keys to surviving crypto madness. Holders of Zenji aren’t traders, they are meme monks mastering patience.</p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-43a2a35 elementor-widget elementor-widget-heading" data-id="43a2a35" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Contact Info</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-5ed2b6a contact-info elementor-widget elementor-widget-text-editor" data-id="5ed2b6a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<ul class="ul">
+ 	<li>Address:
+312 Clinton Circle Atlantic City, M2 080522</li>
+ 	<li>Phone:
+<a href="tel:+1 501 448 6220">+1 501 448 6220</a></li>
+ 	<li>Email:
+<a href="#"><span class="__cf_email__" data-cfemail="c2aaa7aeaead82aca3b6a3eca1adaf">lifinance35@gmail.com</span></a></li>
+ 	<li>Time:
+Every day 7/24 hours</li>
+</ul>								</div>
+				</div>
+				<div class="elementor-element elementor-element-b565d6c elementor-widget elementor-widget-NataSocialLink" data-id="b565d6c" data-element_type="widget" data-widget_type="NataSocialLink.default">
+				<div class="elementor-widget-container">
+					            <div class="modal-social-link">
+                <h3>Follow Us</h3>
+                <ul>
+                                                                        <li>
+                                <a href="https://x.com/Zenjiclan" target="_blank">
+                                    <img src="wp-content/uploads/2025/02/tx.svg" alt="icon">
+                                </a>
+                            </li>
+                                                                                                <li>
+                                <a href="https://t.me/zenjimem" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
+                                </a>
+                            </li>
+                                                                                                <li>
+                                <a href="https://www.tiktok.com/@zenjiclan5?_r=1&_t=ZS-92GojfZKv6C" target="_blank">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                            </li>
+                                                            </ul>
+            </div>
+
+        				</div>
+				</div>
+				<div class="elementor-element elementor-element-6efdfad elementor-widget elementor-widget-heading" data-id="6efdfad" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">Location
+</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-e14e15a elementor-widget elementor-widget-google_maps" data-id="e14e15a" data-element_type="widget" data-widget_type="google_maps.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-custom-embed">
+			<iframe loading="lazy" src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&t=m&z=10&output=embed&iwloc=near" title="London Eye, London, United Kingdom" aria-label="London Eye, London, United Kingdom"></iframe>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		                </div>
+
+            </div>
+        
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+				</header>
+
+		
+			<div class="page-area mt-80">
+																						
+<div id="post-1747" class="post-1747 page type-page status-publish hentry">
+	<div class="entry-content">
+				<div data-elementor-type="wp-page" data-elementor-id="1747" class="elementor elementor-1747">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-c8c25b0 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="c8c25b0" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-323835c" data-id="323835c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-04908a4 elementor-widget elementor-widget-Nata_Crypto_Banner" data-id="04908a4" data-element_type="widget" data-widget_type="Nata_Crypto_Banner.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Hero Area Start -->
+		<div class="ccl-hero-area" style="background-image: url(wp-content/uploads/2025/06/ccl-hero-bg.jpg);">
+			<div class="container-fluid ico-container-fluid">
+				<div class="inner-ccl-hero-area" style="background-image: url();">
+					<div class="content">
+                        <h1>
+  <span class="multiple-text"></span>
+</h1>
+
+                                                    <a href="#" class="default-btn">Join Presale Now</a>
+                        					</div>
+
+					<div class="presale-date d-flex align-items-end justify-content-between">
+						<div class="items">
+							<h3>600+</h3>
+							<p>Community Members</p>
+						</div>
+
+						<div class="presale-date-box">
+                                                            <h2>Presale Ends In</h2>
+                            							<ul class="day-count">
+								<li>
+									<span id="days">0</span>
+									Days								</li>
+								<li>
+									<span id="hours">0</span>
+									Hours								</li>
+								<li>
+									<span id="minutes">0</span>
+									Minutes								</li>
+								<li>
+									<span id="seconds">0</span>
+									Seconds								</li>
+							</ul>
+                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+                                // Set your target date here
+                                const targetDate = new Date("2025-12-23T23:59:59").getTime();
+
+                                function updateCountdown() {
+                                    const now = new Date().getTime();
+                                    const timeLeft = targetDate - now; 
+
+                                    if (timeLeft < 0) {
+                                    document.querySelector(".day-count").innerHTML = "<li>Countdown expired</li>";
+                                    clearInterval(countdownInterval);
+                                    return;
+                                    }
+
+                                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                                    document.getElementById("days").textContent = days;
+                                    document.getElementById("hours").textContent = hours;
+                                    document.getElementById("minutes").textContent = minutes;
+                                    document.getElementById("seconds").textContent = seconds;
+                                }
+
+                                // Initial call
+                                updateCountdown();
+
+                                // Update every second
+                                const countdownInterval = setInterval(updateCountdown, 1000);
+                                </script>
+                            							    <p>Join Now Before It is Too Late!</p>
+                            						</div>
+					</div>
+                                            <div class="all-shapes">
+                            <img decoding="async" src="wp-content/uploads/2025/06/ccl-hero-color.png" class="ccl-hero-color" alt="Image">
+                        </div>
+                    				</div>
+
+				<div class="ccl-secure-speed d-flex align-items-center justify-content-between">
+                                            <div class="secure-item">
+                            <span>Lightning-fast transactions</span>
+                            <p>Low fees, high speed</p>
+                        </div>
+                                            <div class="secure-item">
+                            <span>DeFi &amp; Staking rewards</span>
+                            <p>Earn passive income</p>
+                        </div>
+                                            <div class="secure-item">
+                            <span>Multi-chain compatibility</span>
+                            <p>Supports Ethereum, BNB, and Solana</p>
+                        </div>
+                                            <div class="secure-item">
+                            <span>Smart contract audited</span>
+                            <p>Fully verified and secure</p>
+                        </div>
+                    				</div>
+			</div>
+		</div>
+		<!-- Ccl Hero Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-779bd75 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="779bd75" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3b4f2a6" data-id="3b4f2a6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-852d72b elementor-widget elementor-widget-Nata_About_Area_Two" data-id="852d72b" data-element_type="widget" data-widget_type="Nata_About_Area_Two.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl About Area Start -->
+		<div id="about" class="ccl-about-area ptb-120">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<h1>ABOUT US</h1>
+						<div class="ccl-about-slide-widget">
+							
+                            <p class="title">
+In the chaos of the market, we stay calm.
+When others FOMO, we breathe.
+ <br> When the charts bleed, we meditate.
+
+$ZENJI isn’t just a meme coin — it’s a mindset.
+<br>
+It’s about discipline over degen.
+<br>
+Stillness over panic.
+<br>
+Peace before profit.
+<br>
+</p>
+							<div class="ccl-about-slider owl-carousel  owl-theme">
+                                                                    <div class="item">
+                                        <div class="ccl-about-widget">
+                                            <h3>Solution</h3>
+
+                                            <h5>Lightning-Fast Transactions</h5>
+                                            <p>Our blockchain ensures near-instant transfers with minimal fees.</p>
+
+                                            <h6>Eco-Friendly Consensus</h6>
+                                            <p>Utilizing [Proof-of-Stake (PoS) / Layer-2 Scaling / Green Mining] to reduce energy consumption.</p>
+                                        </div>
+                                    </div>
+                                                                    <div class="item">
+                                        <div class="ccl-about-widget">
+                                            <h3>Speed &amp; Efficiency</h3>
+
+                                            <h5>Real-Time Settlement</h5>
+                                            <p>Execute financial operations in seconds with ultra-low latency.</p>
+
+                                            <h6>Sustainable Infrastructure</h6>
+                                            <p>Built on next-gen, energy-efficient technologies for a significantly smaller carbon footprint.</p>
+                                        </div>
+                                    </div>
+                                                                    <div class="item">
+                                        <div class="ccl-about-widget">
+                                            <h3>Scalability</h3>
+
+                                            <h5>Scalable Architecture</h5>
+                                            <p>Capable of handling thousands of transactions per second without delays.</p>
+
+                                            <h6>Green Protocols</h6>
+                                            <p>Incorporating Layer-2 rollups and eco-aware validation techniques to ensure long-term sustainability.</p>
+                                        </div>
+                                    </div>
+                                							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="ccl-about-content">
+							<p><strong>Our mission</strong> At $ZENJI, our mission is to build a secure, transparent, and utility-driven digital asset that empowers individuals to participate confidently in the decentralized economy.
+
+We are committed to creating long-term value through blockchain innovation, strong security standards, and sustainable token economics. By combining cutting-edge technology with real-world use cases, $ZENJI aims to bridge the gap between traditional finance and the future of decentralized wealth.</p>
+							<h5>⚠️ Key Challenges in Traditional Cryptocurrencies</h5>
+							<ul>
+								<li>⚡ Slow transaction speeds causing delays and frustration.</li>
+								<li>💸 High fees making small transactions uneconomical.</li>
+								<li>🌍 Environmental concerns over energy-intensive mining processes.</li>
+								<li>🔒 Security vulnerabilities leading to hacks and loss of funds.</li>
+							</ul>
+                                                            <div class="image">
+  <video 
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata">
+    
+    <source src="wp-content/uploads/WhatsApp Video 2025-12-16 at 1.48.42 PM.mp4" type="video/mp4">
+    <source src="wp-content/uploads/WhatsApp Video 2025-12-16 at 1.48.42 PM.webm" type="video/webm">
+    
+    Your browser does not support the video.
+  </video>
+</div>
+
+                            						</div>
+					</div>
+				</div>
+			</div>
+                            <div class="all-shapes">
+                    <img decoding="async" src="wp-content/uploads/2025/06/about-color.png" class="about-color-shape" alt="Image">
+                </div>
+            		</div>
+		<!-- Ccl About Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ef4c245 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="ef4c245" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-41184d3" data-id="41184d3" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-10399dd elementor-widget elementor-widget-Nata_Tokenmics_Two_Area" data-id="10399dd" data-element_type="widget" data-widget_type="Nata_Tokenmics_Two_Area.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Token Chart Area Start -->
+		<div id="tokenomics" class="ccl-token-chart-area pb-120">
+			<div class="container">
+				<h2 class="ccl-chart-heading">Tokenomics</h2>
+				<div class="row align-items-end">
+					<div class="col-lg-4">
+						<div class="ccl-token-chart-list">
+							<h4>Total Supply: 1 Billion Tokens</h4>
+
+                                                            <div class="progress-item">
+                                    <span class="progress-label"><strong>90% Liquidity Pool:</strong> 900,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style1" style="width: 90%">
+                                        </div>
+                                    </div>
+                                    <span class="number">90%</span>
+                                </div>
+                                                            <div class="progress-item">
+                                    <span class="progress-label"><strong>Marketing, Quests, Airdrop:</strong> 50,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style2" style="width: 5%">
+                                        </div>
+                                    </div>
+                                    <span class="number">5%</span>
+                                </div>
+                                                            <div class="progress-item">
+                                    <span class="progress-label"><strong>Zen Vault:</strong> 30,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style3" style="width: 3%">
+                                        </div>
+                                    </div>
+                                    <span class="number">3%</span>
+                                </div>
+                                                            <div class="progress-item">
+                                    <span class="progress-label"><strong>Dev &amp; Team:</strong>20,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style4" style="width: 2%">
+                                        </div>
+                                    </div>
+                                    <span class="number">2%</span>
+                                </div>
+                                                            
+                                                
+                            						</div>
+					</div>
+					<div class="col-lg-8">
+						<div class="ccl-token-chart-widget">
+							<h4>Total Supply and Distribution</h4>
+                                                            <div class="chart-img">
+                                    <img decoding="async" src="wp-content/uploads/Gemini_Generated_Image_ansaufansaufansa (1).png" alt="Chart Image" ;">
+                                </div>
+                            						</div>
+					</div>
+				</div>
+			</div>
+                            <div class="all-shapes">
+                    <img decoding="async" src="wp-content/uploads/2025/07/ccl-chart-color.png" class="ccl-chart-color" alt="Image">
+                </div>
+            		</div>
+		<!-- Ccl Token Chart Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-86c7b26 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="86c7b26" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c36232a" data-id="c36232a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-59106e8 elementor-widget elementor-widget-Nata_Roadmap_Area" data-id="59106e8" data-element_type="widget" data-widget_type="Nata_Roadmap_Area.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Roadmap Area Start -->
+		<div id="roadmap" class="ccl-roadmap-area">
+			<div class="container-fluid ico-container-fluid">
+				<div class="inner-ccl-roadmap-area">
+					<div class="ccl-section-title">
+                        <h1>ROADMAP</h1>
+                        <h2 class="title">Our journey is just beginning! Here’s what we have planned to ensure the success and long-term sustainability of $ZENJI</h2>
+					</div>
+					<div class="ccl-roadmap-slider owl-carousel owl-theme">
+                                                    <div class="ccl-roadmap-widget" style="background-image: url(wp-content/uploads/2025/06/ccl-roadmap1.jpg);">
+                                <span>Phase 1</span>
+                                <h2>The Birth Of Calm</h2>
+                                <ul>
+                                                                            <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Community Building                                       </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Whitepaper Release                                       </li>
+                                                                         
+                                        <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        DOA Community Launch                                     </li>
+
+
+                        <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Pumpdotfun Launch                                     </li>
+
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Website Developement                                      </li>
+                                                                         
+                                                                         
+
+
+
+
+
+
+
+
+    
+
+
+                                                                                                        </ul>
+                            </div>
+                                                    <div class="ccl-roadmap-widget" style="background-image: url(wp-content/uploads/2025/06/ccl-roadmap2.jpg);">
+                                <span>Phase 2</span>
+                                <h2>Rise Of The ZENJI Clan</h2>
+                                <ul>
+                                                                            <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        DEX Listing                                    </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                    Influencer Partnerships                                   </li>
+                                                                         
+                                        <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        NFT Clan Cards Release                                      </li>
+
+
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Meme Campaign Expansion                                </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Zen Staking Launch                                   </li>
+                                                                         
+                                                                         
+                                                                                                        </ul>
+                            </div>
+                                                    <div class="ccl-roadmap-widget" style="background-image: url(wp-content/uploads/2025/06/ccl-roadmap3.jpg);">
+                                <span>Phase 3</span>
+                                <h2>CalmFi Ecosystem Launch </h2>
+                                <ul>
+                                                                            <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        ZenPay demo rollout                                 </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Zen Vault charity and creators initiatives                                      </li>
+                                                                         
+                                        <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Anime-inspired art collections                                    </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Firts IRL meetups                                  </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Zen charity donation                                     </li>
+                                                                    
+                                                                         
+                                                                                                        </ul>
+                            </div>
+                                                    <div class="ccl-roadmap-widget" style="background-image: url(wp-content/uploads/2025/06/ccl-roadmap4.jpg);">
+                                <span>Q3 </span>
+                                <h2>ZENJI Whitepaper upgrade And More Developement Inclusive</h2>
+                                <ul>
+                                                                            <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Coming soon...                                   </li>
+                                                                                                                <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Coming soon...                                 </li>
+                                                                         
+                                        <li>
+                                                                                            <img decoding="async" src="wp-content/uploads/2025/06/star2.png" alt="Image">
+                                                                                        Coming Soon                                    </li>
+                                                                                                        </ul>
+                            </div>
+                                                    
+                            </div>
+                        					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ccl Roadmap Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5beec31 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="5beec31" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-009ceaf" data-id="009ceaf" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-16d85ea elementor-widget elementor-widget-Nata_Payment_Area" data-id="16d85ea" data-element_type="widget" data-widget_type="Nata_Payment_Area.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Payment Methods Area Start -->
+		<div class="ccl-payment-methods-area pt-120 pb-150">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="ccl-payment-content">
+							<h2>How to buy</h2>
+							<div class="d-flex align-items-end">
+                                                                    <div class="image">
+                                        <img decoding="async" src="wp-content/uploads/WhatsApp Image 2025-12-16 at 1.48.40 PM (1).jpeg" alt="Image">
+                                    </div>
+                                								<div class="widget">
+									<h4>Accepted payment methods</h4>
+									<ul>
+	<li>
+		Ethereum (ETH) – ERC20
+	</li>
+	<li>
+		Binance Coin (BNB) – BEP20
+	</li>
+	<li>
+		Tether (USDT) – ERC20/BEP20
+	</li>
+	<li>
+		Other Supported Cryptos (If Any)
+	</li>
+</ul>								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="ccl-methods-card-widget">
+							<div class="row g-4">
+                                                                    <div class="col-lg-6 col-md-6">
+                                        <div class="method-card">
+                                            <span>01</span>
+                                            <h3>Set up a crypto wallet</h3>
+                                            <p>Set up a crypto wallet like MetaMask or Trust Wallet to securely store and manage your Tokens with ease!</p>
+                                        </div>
+                                    </div>
+                                                                    <div class="col-lg-6 col-md-6">
+                                        <div class="method-card">
+                                            <span>02</span>
+                                            <h3>Fund your wallet</h3>
+                                            <p>Add funds to your wallet by purchasing or transferring ETH, BNB, or USDT from a crypto exchange.</p>
+                                        </div>
+                                    </div>
+                                                                    <div class="col-lg-6 col-md-6">
+                                        <div class="method-card">
+                                            <span>03</span>
+                                            <h3>Connect your wallet</h3>
+                                            <p>Set up a crypto wallet like MetaMask or Trust Wallet to securely store and manage your Tokens with ease!</p>
+                                        </div>
+                                    </div>
+                                                                    <div class="col-lg-6 col-md-6">
+                                        <div class="method-card">
+                                            <span>04</span>
+                                            <h3>Receive your tokens</h3>
+                                            <p>Receive your tokens instantly and join the future of decentralized finance with Nata Coin!</p>
+                                        </div>
+                                    </div>
+                                							</div>
+                                                            <p class="latest-tag">
+                                    Need help? Join our <a href="https://t.me/zenjimem" target="_blank" class="tm">Telegram</a> or <a href="https://x.com/Zenjiclan" target="_blank" class="dd">Twitter(X)</a> for 24/7 support!                                </p>
+                            						</div>
+					</div>
+				</div>
+			</div>
+                            <div class="all-shapes">
+                    <img decoding="async" src="wp-content/uploads/2025/06/payment-method-color.png" class="method-color" alt="Image">
+                </div>
+            		</div>
+		<!-- Ccl Payment Methods Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-9694960 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="9694960" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-15f05ea" data-id="15f05ea" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-e4d6c71 elementor-widget elementor-widget-classic-teams-two-widget" data-id="e4d6c71" data-element_type="widget" data-widget_type="classic-teams-two-widget.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ico Team Area Start -->
+		<div class="ico-team-area ccl-team-area pb-120 pt-150" id="team">
+			<div class="container-fluid">
+                                    <div class="ccl-section-title style2">
+                        <h1>TEAM</h1>
+                        <h2 class="title">Meet the passionate team and expert advisors behind $ZENJI, driving innovation and building a sustainable blockchain ecosystem for the future</h2>
+                    </div>
+                				<div class="ico-team-slide owl-carousel owl-theme">
+                                            <div class="ico-team-item">
+                                                            <div class="image">
+                                    <img decoding="async" src="wp-content/uploads/2025/06/team1.jpg" alt="Image">
+                                </div>
+                                                        <h3>
+        
+
+Ethan Carter                         </h3>
+                            <p>CEO &amp; Founder</p>
+                        </div>
+                                            <div class="ico-team-item">
+                                                            <div class="image">
+                                    <img decoding="async" src="wp-content/uploads/2025/06/team2.jpg" alt="Image">
+                                </div>
+                                                        <h3>
+                                Brian Thomas                            </h3>
+                            <p>CMO &amp; Growth Strategist</p>
+                        </div>
+                                            <div class="ico-team-item">
+                                                            <div class="image">
+                                    <img decoding="async" src="wp-content/uploads/2025/06/team3.jpg" alt="Image">
+                                </div>
+                                                        <h3>
+                                Cheryle Weise                            </h3>
+                            <p>CTO &amp; Blockchain Lead</p>
+                        </div>
+                                            <div class="ico-team-item">
+                                                            <div class="image">
+                                    <img decoding="async" src="wp-content/uploads/2025/06/team3.jpg" alt="Image">
+                                </div>
+                                                        <h3>
+                                Daniel Walker 
+
+                 </h3>
+                            <p>Co-Founder</p>
+                        </div>
+                                            <div class="ico-team-item">
+                                                            <div class="image">
+                                    <img decoding="async" src="wp-content/uploads/2025/06/team5.jpg" alt="Image">
+                                </div>
+                                                        <h3>
+                                 De Crypto Chief                       </h3>
+                            <p>Co-Founder</p>
+                        </div>
+                    				</div>
+			</div>
+		</div>
+		<!-- Ico Team Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7e7bb1c elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="7e7bb1c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4e0eaf6" data-id="4e0eaf6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-40122ff elementor-widget elementor-widget-Nata_PartnerFour_Logo" data-id="40122ff" data-element_type="widget" data-widget_type="Nata_PartnerFour_Logo.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Partners Area Start -->
+		<div class="ccl-partners-area pb-120">
+			<div class="container">
+				<div class="inner-ccl-partners-area" style="background-image: url(wp-content/uploads/2025/06/ccl-partner-bg.jpg);">
+                                            <div class="content">
+                            <h1>PARTNERS</h1>
+                            <h2 class="title">We are backed by leading blockchain companies, venture capital firms, and strategic partners</h2>
+                        </div>
+                    					<div class="partner-slide owl-carousel owl-theme">
+                                                     <div class="partner-item wow animate__animated animate__fadeInUp delay-0-2s">
+                                                                    <img decoding="async" src="wp-content/uploads/2022/10/partner-1.png" alt="Partner Logo">
+                                                            </div>
+                                                    <div class="partner-item wow animate__animated animate__fadeInUp delay-0-2s">
+                                                                    <img decoding="async" src="wp-content/uploads/2022/10/partner-2.png" alt="Partner Logo">
+                                                            </div>
+                                                    <div class="partner-item wow animate__animated animate__fadeInUp delay-0-2s">
+                                                                    <img decoding="async" src="wp-content/uploads/2022/10/partner-3.png" alt="Partner Logo">
+                                                            </div>
+                                                    <div class="partner-item wow animate__animated animate__fadeInUp delay-0-2s">
+                                                                    <img decoding="async" src="wp-content/uploads/2022/10/partner-4.png" alt="Partner Logo">
+                                                            </div>
+                                                    <div class="partner-item wow animate__animated animate__fadeInUp delay-0-2s">
+                                                                    <img decoding="async" src="wp-content/uploads/2022/10/partner-5.png" alt="Partner Logo">
+                                                            </div>
+                        					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ccl Partners Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				
+
+
+
+
+
+
+
+
+
+
+<section class="token-info   inner-ccl-partners-area" style="background-image: url(wp-content/uploads/2025/06/ccl-partner-bg.jpg);">
+  <h2>$ZENJI  Information</h2>
+  <p class="subtitle">Essential details about $ZENJI</p>
+
+  <div class="info-grid">
+    <div class="info-card"><span class="label">$ZENJI</span><small>Symbol</small></div>
+    <div class="info-card"><span class="label">1 BILLION</span><small>Total Supply</small></div>
+    <div class="info-card"><span class="label">BSC</span><small>Network</small></div>
+    <div class="info-card"><span class="label">18</span><small>Decimal</small></div>
+  </div>
+
+  <div class="contract-box">
+    <span class="contract-title">Contract Address</span>
+
+    <div class="contract-content" id="contractContent">
+      <div class="coming-soon" id="comingSoon">
+        <span class="pulse-dot"></span>
+        <span>Coming Soon</span>
+        <span class="dots"></span>
+      </div>
+
+      <div class="contract-live hidden" id="contractLive">
+        <span class="chain-badge bsc">BSC</span>
+        <code id="contractAddress">
+          Coming Soon...
+        </code>
+        <button id="copyBtn" disabled>Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GSAP -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+
+
+
+
+
+
+
+
+	
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e4db103 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="e4db103" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cf2f436" data-id="cf2f436" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cc5b63c elementor-widget elementor-widget-Nata_Faq_Section" data-id="cc5b63c" data-element_type="widget" data-widget_type="Nata_Faq_Section.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Question Area Start -->
+		<div id="faq" class="ccl-question-area">
+			<div class="container-fluid ico-container-fluid">
+				<div class="inner-ccl-question-area">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4"> 
+								<div class="ccl-question-content">
+                                    									    <h2>Frequently Asked Questions</h2>
+                                    									<div class="contact">
+                                                                                    <span>Have any questions?</span>
+                                        										<h5>Call:											<a href="tel:+14447058944">+1 501 448 6220</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-8">
+								<div class="ccl-question-widget">
+									<div class="accordion accordion-flush" id="faqAccordion2">
+                                                                                                                            <div class="accordion-item">
+                                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                                    Q1: Is my investment safe?                                                </button>
+                                                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion2">
+                                                    <div class="accordion-body">
+                                                        <strong>Answer:</strong> We prioritize security by using industry-standard blockchain technology, smart-contract best practices, and transparent tokenomics. While every investment carries risk, $ZENJI is designed with long-term sustainability, liquidity support, and security in mind. Always invest responsibly and only what you can afford to hold long-term.                                                </div>
+                                                </div>
+                                            </div>
+                                                                                                                                                                    <div class="accordion-item">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                                    Q2: What's the Launch Date?                                             </button>
+                                                <div id="collapse2" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
+                                                    <div class="accordion-body">
+                                                        <strong>Answer:</strong>December 23rd 2025                                               </div>
+                                                </div>
+                                            </div>
+                                                                                                                                                                    <div class="accordion-item">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                                    Q3: What measures are in place to protect user data?                                             </button>
+                                                <div id="collapse3" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
+                                                    <div class="accordion-body">
+                                                        <strong>Answer:</strong>We use strong encryption, secure servers, and strict access controls to protect user data. Sensitive operations are handled on-chain where possible, minimizing data exposure, and we follow best security practices to prevent unauthorized access.                                               </div>
+                                                </div>
+                                            </div>
+                                                                                                                                                                    <div class="accordion-item">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                                    Q4: Are team tokens locked?                                              </button>
+                                                <div id="collapse4" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
+                                                    <div class="accordion-body">
+                                                        <strong>Answer:</strong>Yes. Team tokens are locked and subject to a vesting schedule to ensure long-term commitment, prevent sudden sell-offs, and align the team’s incentives with the growth of the project.                                               </div>
+                                                </div>
+                                            </div>
+                                                                                                                                                                    <div class="accordion-item">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                                    Q5: What cryptocurrencies can I use to buy $ZENJI Tokens?                                                </button>
+                                                <div id="collapse5" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
+                                                    <div class="accordion-body">
+                                                        <strong>Answer:</strong> $ZENJI tokens can be purchased using supported network currencies such as BNB (on BSC) or ETH (on Ethereum), depending on the active sale phase. Supported payment options will be clearly announced before the ICO goes live.                                               </div>
+                                                </div>
+                                            </div>
+                                                                                									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ccl Question Area End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-d21fa4b elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="d21fa4b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d18804b" data-id="d18804b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-fc51ac7 elementor-widget elementor-widget-Nata_Community_Area" data-id="fc51ac7" data-element_type="widget" data-widget_type="Nata_Community_Area.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Community Area Start -->
+		<div class="ccl-community-area ptb-120">
+			<div class="container">
+				<div class="ccl-community-heading">
+					<h2>Community</h2>
+					<h5>Join the $ZENJI Community</h5>
+				</div>
+				<div class="ccl-community-widget">
+					<div class="row g-0">
+                                                    <div class="col">
+                                <div class="ccl-community">
+                                    <a href="https://t.me/zenjimem" target="_blank">
+                                                                                    <div class="icon">
+                                                <i class="fa-brands fa-telegram-plane"></i>
+
+
+
+                                            </div>
+                                                                                <span>Telegram</span>
+                                    </a>
+                                </div>
+                            </div>
+                                                    <div class="col">
+                                <div class="ccl-community">
+                                    <a href="https://www.tiktok.com/@zenjiclan5?_r=1&_t=ZS-92GojfZKv6C" target="_blank">
+                                                                                    <div class="icon">
+                                                <i class="fa-brands fa-tiktok"></i>
+
+                                            </div>
+                                                                                <span>TikTok</span>
+                                    </a>
+                                </div>
+                            </div>
+                                                    
+                                                    <div class="col">
+                                <div class="ccl-community">
+                                    <a href="https://www.youtube.com/@ZENJIClan" target="_blank">
+                                                                                    <div class="icon">
+                                                <i class="fa-brands fa-youtube"></i>
+
+                                            </div>
+                                                                                <span>Youtube</span>
+                                    </a>
+                                </div>
+                            </div>
+                                                    <div class="col">
+                                <div class="ccl-community">
+                                    <a href="https://x.com/Zenjiclan" target="_blank">
+                                                                                    <div class="icon">
+                                                <i class="fa-brands fa-twitter"></i>
+
+                                            </div>
+                                                                                <span>X</span>
+                                    </a>
+                                </div>
+                            </div>
+                        					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ccl Community Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5dff6b8 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="5dff6b8" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-802189d" data-id="802189d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5aaa90d elementor-widget elementor-widget-Nata_Funfacts_Area" data-id="5aaa90d" data-element_type="widget" data-widget_type="Nata_Funfacts_Area.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Fun Fact Area Start -->
+		<div class="ccl-fun-fact-area pb-120">
+			<div class="container">
+				<div class="row g-4">
+                                            <div class="col-lg-4 col-md-4">
+                            <div class="ccl-funfact-widget">
+                                <h3>146+</h3>
+                                <p>Telegram Members</p>
+                            </div>
+                        </div>
+                                            <div class="col-lg-4 col-md-4">
+                            <div class="ccl-funfact-widget">
+                                <h3>80+</h3>
+                                <p>Twitter Followers</p>
+                            </div>
+                        </div>
+                                            <div class="col-lg-4 col-md-4">
+                            <div class="ccl-funfact-widget">
+                                <h3>500+</h3>
+                                <p>Daily Active Users</p>
+                            </div>
+                        </div>
+                    				</div>
+			</div>
+		</div>
+		<!-- Ccl Fun Fact Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-226a123 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="226a123" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-47e2201" data-id="47e2201" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-0589d1a elementor-widget elementor-widget-classic-testimonials-widget" data-id="0589d1a" data-element_type="widget" data-widget_type="classic-testimonials-widget.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Testimonial Area Start -->
+		<div class="ccl-testimonial-area">
+			<div class="container">
+				<div class="inner-testimonial-area" style="background-image: url(wp-content/uploads/2025/06/ccl-testimonial-bg.jpg);">
+					<div class="row">
+						<div class="col-lg-5">
+							<div class="ccl-testimonial-content">
+								<h2>Testimonials</h2>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="ccl-testimonial-slider owl-carousel owl-theme wow animate__animated animate__fadeInUp delay-0-4s">
+                                                                    <div class="ccl-testimonial-widget">
+                                                                                    <div class="icon">
+                                                <img decoding="async" src="wp-content/uploads/2025/06/qoute.png" alt="Image">
+                                            </div>
+                                                                                <h5>"I was impressed by how easy it was to buy and stake $ZENJI. The team is highly responsive, and the project has great potential. Looking forward to its future growth!"</h5>
+
+                                        <h6>Audrey Smith</h6>
+                                        <p>Blockchain Enthusiast</p>
+                                    </div>
+                                                                    <div class="ccl-testimonial-widget">
+                                                                                    <div class="icon">
+                                                <img decoding="async" src="wp-content/uploads/2025/06/qoute.png" alt="Image">
+                                            </div>
+                                                                                <h5>"$ZENJI makes crypto feel approachable. The interface is user-friendly and staking rewards are attractive. This could become a major player in the space."</h5>
+
+                                        <h6>Michael Torres</h6>
+                                        <p>Crypto Investor</p>
+                                    </div>
+                                                                    <div class="ccl-testimonial-widget">
+                                                                                    <div class="icon">
+                                                <img decoding="async" src="wp-content/uploads/2025/06/qoute.png" alt="Image">
+                                            </div>
+                                                                                <h5>I'm thrilled with the transparency and communication from the $ZENJI team. Their regular updates and clear roadmap really stand out in the blockchain industry.</h5>
+
+                                        <h6>Lena Wang</h6>
+                                        <p>DeFi Analyst</p>
+                                    </div>
+                                							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Ccl Testimonial Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-281a8e9 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="281a8e9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-feb7587" data-id="feb7587" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d6e0ba7 elementor-widget elementor-widget-Nata_Posts_Two" data-id="d6e0ba7" data-element_type="widget" data-widget_type="Nata_Posts_Two.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Blog Area Start -->
+		<div class="ccl-blog-area ptb-120" id="blog">
+			<div class="container">
+				<div class="ccl-section-title style2">
+					<h1>NEWS</h1>
+                    <h2 class="title">Stay updated with the latest crypto news, market trends, and $ZENJI project updates on our blog.</h2>
+				</div>
+				<div class="row">
+                                                                <div class="col-lg-6">
+                            <div class="ccl-blog-card">
+                                  <div class="image">
+  <video 
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata" style="border-radius: 15px;">
+    
+    <source src="wp-content/uploads/WhatsApp Video 2025-12-16 at 1.48.46 PM.mp4" type="video/mp4">
+    <source src="wp-content/uploads/WhatsApp Video 2025-12-16 at 1.48.46 PM.webm" type="video/webm">
+    
+    Your browser does not support the video.
+  </video>
+</div>
+
+                                <div class="content">
+                                    <span>December 10, 2025</span>
+                                    <h3>
+                                        <a href="#/nata/step-by-step-guide-how-to-buy-and-store-nata-securely/">Step-by-step guide how to buy and store $ZENJI securely</a>
+                                    </h3>
+                                                                            <a href="#/nata/step-by-step-guide-how-to-buy-and-store-nata-securely/" class="read-more2">Coming soon</a>
+                                                                    </div>
+                            </div>
+                        </div>
+                                                                                                    
+					<div class="col-lg-6">
+						<div class="ccl-blog-item">
+                                                                                                                    <div class="item">
+                                    <span>December 13, 2025</span>
+                                    <h3>
+                                        <a href="#/nata/nata-sells-out-private-sale-in-record-time/">$ZENJI sells out private sale in record time</a>
+                                    </h3>
+                                                                            <a href="#/nata/nata-sells-out-private-sale-in-record-time/" class="read-more2">Coming soon</a>
+                                                                    </div>
+							                                                            <div class="item">
+                                    <span>December 15, 2025</span>
+                                    <h3>
+                                        <a href="#/nata/why-nata-is-a-game-changer-for-defi-web3/">Why $ZENJI is a game-changer for DeFi &amp; Web3</a>
+                                    </h3>
+                                                                            <a href="#/nata/why-nata-is-a-game-changer-for-defi-web3/" class="read-more2">Coming soon</a>
+                                                                    </div>
+							                                                            <div class="item">
+                                    <span>December 17, 2025</span>
+                                    <h3>
+                                        <a href="#/nata/the-golden-state-announce-legacy-nft-collection/">The golden state announce legacy NFT collection</a>
+                                    </h3>
+                                                                            <a href="#/nata/the-golden-state-announce-legacy-nft-collection/" class="read-more2">Coming soon</a>
+                                                                    </div>
+							                            						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+                            <div class="all-shape">
+                    <img decoding="async" src="wp-content/uploads/2025/07/ccl-blog-color.png" class="ccl-blog-color" alt="Image">
+                </div>
+            		</div>
+		<!-- Ccl Blog Area End -->
+
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+			</div><!-- .entry-content -->
+
+	</div><!-- #post-1747 -->
+														</div>
+	
+			<div class="go-top">
+				<i class="fas fa-angle-up"></i>
+
+			<i class="fas fa-angle-up"></i>
+
+			</div>
+		
+		<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+			<div class='footer-width-fixer'>		<div data-elementor-type="wp-post" data-elementor-id="2182" class="elementor elementor-2182">
+						<section class="elementor-section elementor-top-section elementor-element elementor-element-2f726ab elementor-section-full_width footer-area ccl-footer bg-color-140c2dr pt-150 pb-120 elementor-section-height-default elementor-section-height-default" data-id="2f726ab" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e40c4de" data-id="e40c4de" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-74d211b elementor-widget elementor-widget-Nata_Newsletter_Area" data-id="74d211b" data-element_type="widget" data-widget_type="Nata_Newsletter_Area.default">
+				<div class="elementor-widget-container">
+					
+        <!-- Ccl Newsletter Area Start -->
+        <div class="container">
+            <div class="ccl-newsletter-widget pb-120">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                                                    <div class="ccl-newsletter-heading">
+                                <h2>Don’t miss out on important news, token sales, and special offers!</h2>
+                            </div>
+                                            </div>
+                    <div class="col-lg-4">
+                        <div class="ccl-newsletter-box">
+                            <form class="newsletter-form mailchimp" method="post">
+                                <input type="email" class="form-control shadow-none memail" placeholder="Enter your email" name="EMAIL" required="">
+                                                                    <button type="submit" class="default-btn">
+                                        Subscribe                                    </button>
+                                                                <p class="mchimp-errmessage" style="display: none;"></p>
+                                <p class="mchimp-sucmessage" style="display: none;"></p>
+                            </form>
+                            <script>
+                                ;(function($){
+                                    "use strict";
+                                    $(document).ready(function () {
+                                        // MAILCHIMP
+                                        if ($(".mailchimp").length > 0) {
+                                            $(".mailchimp").ajaxChimp({
+                                                callback: mailchimpCallback,
+                                                url: "https://envytheme.us13.list-manage.com/subscribe/post?u=1f4dcefed57b9c394873f34d2&amp;id=b093890ff6"
+                                            });
+                                        }
+                                        if ($(".mailchimp_two").length > 0) {
+                                            $(".mailchimp_two").ajaxChimp({
+                                                callback: mailchimpCallback,
+                                                url: "https://envytheme.us13.list-manage.com/subscribe/post?u=1f4dcefed57b9c394873f34d2&amp;id=b093890ff6" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
+                                            });
+                                        }
+                                        $(".memail").on("focus", function () {
+                                            $(".mchimp-errmessage").fadeOut();
+                                            $(".mchimp-sucmessage").fadeOut();
+                                        });
+                                        $(".memail").on("keydown", function () {
+                                            $(".mchimp-errmessage").fadeOut();
+                                            $(".mchimp-sucmessage").fadeOut();
+                                        });
+                                        $(".memail").on("click", function () {
+                                            $(".memail").val("");
+                                        });
+
+                                        function mailchimpCallback(resp) {
+                                            if (resp.result === "success") {
+                                                $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
+                                                $(".mchimp-sucmessage").fadeOut(500);
+                                            } else if (resp.result === "error") {
+                                                $(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
+                                            }
+                                        }
+                                    });
+                                })(jQuery)
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!-- Ccl Newsletter Area End -->
+         
+
+        				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-5285a60 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5285a60" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-06ba855 footer-area" data-id="06ba855" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<section class="elementor-section elementor-inner-section elementor-element elementor-element-d156a4c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d156a4c" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-806423c" data-id="806423c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-93bf8b8 elementor-widget elementor-widget-Nata_FooterLists" data-id="93bf8b8" data-element_type="widget" data-widget_type="Nata_FooterLists.default">
+				<div class="elementor-widget-container">
+					
+        <div class="single-footer-widget">
+            <ul class="single-footer-wid widget_nata_footer_menu_link">
+                                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                                    <li>
+                        <a href="#">Features</a>
+                    </li>
+                                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                                    <li>
+                        <a href="#">Projects</a>
+                    </li>
+                            </ul>
+        </div>
+        				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-91300d0" data-id="91300d0" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-10caf62 elementor-widget elementor-widget-heading" data-id="10caf62" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">$ZENJI</h2>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-a9038e5" data-id="a9038e5" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5341bfd elementor-widget elementor-widget-Nata_FooterSocialIcon" data-id="5341bfd" data-element_type="widget" data-widget_type="Nata_FooterSocialIcon.default">
+				<div class="elementor-widget-container">
+					
+        <div class="widget single-footer-widget widget_nata_socials_link">        
+            <ul class="social-link">
+                                    <li>
+                        <span>Follow Us: </span>
+                    </li>
+                            
+                                <li>
+                    <a href="https://t.me/zenjimem" target="_blank">
+
+                         
+                            <i class="fa-brands fa-telegram"></i>
+                        
+                        Telegram               </a>
+                </li>
+                                <li>
+                    <a href="https://twitter.com/zenjimem" target="_blank">
+
+                         
+                            <img src="wp-content/uploads/2025/02/twitter-x.svg" alt="icon">
+                        
+                        Twitter                    </a>
+                </li>
+                                <li>
+                    <a href=" https://www.youtube.com/@ZENJIClan" target="_blank">
+
+                         
+                            <i class="fa-brands fa-youtube"></i>
+                        
+                        Youtube            </a>
+                </li>
+                            </ul>
+        </div>
+        				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+					</div>
+		</div>
+					</div>
+		</section>
+				<div class="elementor-element elementor-element-0f9afd6 elementor-absolute elementor-widget elementor-widget-image" data-id="0f9afd6" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img src="wp-content/uploads/elementor/thumbs/footer-shape-1-r8jd8djxqgiwqzxs8o0iibc5leif6gh072bxqpu310.png" title="footer-shape" alt="footer-shape" loading="lazy">															</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-f78d66a copy-right-area elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f78d66a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4e99eb0" data-id="4e99eb0" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-c53594f elementor-widget elementor-widget-text-editor" data-id="c53594f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p class="p">Dev: <a href="https://kennyakeem.github.io/KenTech/" target="_blank" rel="noopener">HRM</a></p>								</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		</div>		</footer>
+	</div><!-- #page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/nata/*"},{"not":{"href_matches":["/nata/wp-*.php","/nata/wp-admin/*","/nata/wp-content/uploads/*","/nata/wp-content/*","/nata/wp-content/plugins/*","/nata/wp-content/themes/nata/*","/nata/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		
+			<script>
+			// Quantity
+			jQuery(document).ready(function($){
+				$(document).on('click', '.plus', function(e) { // replace '.quantity' with document (without single quote)
+					$input = $(this).prev('input.qty');
+					var val = parseInt($input.val());
+					var step = $input.attr('step');
+					step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
+					$input.val( val + step ).change();
+				});
+				$(document).on('click', '.minus',  // replace '.quantity' with document (without single quote)
+					function(e) {
+					$input = $(this).next('input.qty');
+					var val = parseInt($input.val());
+					var step = $input.attr('step');
+					step = 'undefined' !== typeof(step) ? parseInt(step) : 1;
+					if (val > 0) {
+						$input.val( val - step ).change();
+					}
+				});
+			});
+		</script>
+				<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+				<script type='text/javascript'>
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type="text/javascript" id="ccp-script-js-extra">
+/* <![CDATA[ */
+var ccp_ajax_obj = {"ajax_url":"#/nata/wp-admin/admin-ajax.php","nonce":"084599d0fc"};
+//# sourceURL=ccp-script-js-extra
+/* ]]> */
+</script>
+<script src="wp-content/plugins/coin-compare/assets/js/compare.js?ver=1.0" id="ccp-script-js"></script>
+<script src="wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
+<script src="wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+/* ]]> */
+</script>
+<script src="wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1" id="swv-js"></script>
+<script id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/themes.hibootstrap.com\/nata\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+//# sourceURL=contact-form-7-js-before
+/* ]]> */
+</script>
+<script src="wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1" id="contact-form-7-js"></script>
+<script src="wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.30.2" id="elementor-webpack-runtime-js"></script>
+<script src="wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.30.2" id="elementor-frontend-modules-js"></script>
+<script src="wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.30.2","is_static":false,"experimentalFeatures":{"additional_custom_breakpoints":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"cloud-library":true,"e_opt_in_v4_page":true},"urls":{"assets":"https:\/\/themes.hibootstrap.com\/nata\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/themes.hibootstrap.com\/nata\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/themes.hibootstrap.com\/nata\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"02300010d7"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":1747,"title":"Crypto%20Coin%20Launch%20%E2%80%93%20Nata","excerpt":"","featuredImage":false}};
+//# sourceURL=elementor-frontend-js-before
+/* ]]> */
+</script>
+<script src="wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.30.2" id="elementor-frontend-js"></script>
+<script type="text/javascript" id="custom-ajax-script-js-extra">
+/* <![CDATA[ */
+var customAjax = {"ajaxUrl":"#/nata/wp-admin/admin-ajax.php","nonce":"3dffa3a268"};
+//# sourceURL=custom-ajax-script-js-extra
+/* ]]> */
+</script>
+<script src="wp-content/themes/nata/assets/js/custom-ajax-script.js?ver=1.0" id="custom-ajax-script-js"></script>
+<script src="wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=9.9.5" id="sourcebuster-js-js"></script>
+<script type="text/javascript" id="wc-order-attribution-js-extra">
+/* <![CDATA[ */
+var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"#/nata/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+//# sourceURL=wc-order-attribution-js-extra
+/* ]]> */
+</script>
+<script src="wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=9.9.5" id="wc-order-attribution-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"#/nata/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+
+
+</script>
+
+
+<!-- typing effect -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script type="text/javascript">
+  const typed = new Typed('.multiple-text', {
+    strings: [
+      'Meditate',
+      'Accumulate',
+      'Dominate',
+      'LAUNCH IN PROCESS 🚀🚀 '
+    ],
+    typeSpeed: 80,
+    backSpeed: 50,
+    backDelay: 1000,
+    loop: true,
+    smartBackspace: true
+  });
+</script>
+
+
+        
+<script>
+  const CONTRACT_DEPLOYED = true; // 🔁 switch to false if not ready
+
+  const comingSoon = document.getElementById("comingSoon");
+  const contractLive = document.getElementById("contractLive");
+  const copyBtn = document.getElementById("copyBtn");
+  const address = document.getElementById("contractAddress").innerText;
+
+  if (CONTRACT_DEPLOYED) {
+    gsap.to(comingSoon, {
+      opacity: 0,
+      y: -10,
+      duration: .6,
+      onComplete: () => {
+        comingSoon.style.display = "none";
+        contractLive.classList.remove("hidden");
+
+        gsap.from(contractLive, {
+          opacity: 0,
+          y: 10,
+          duration: .6
+        });
+      }
+    });
+  }
+
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(address);
+
+    copyBtn.innerText = "Copied!";
+    copyBtn.classList.add("copied");
+
+    gsap.fromTo(copyBtn, { scale: .9 }, { scale: 1, duration: .3 });
+
+    setTimeout(() => {
+      copyBtn.innerText = "Copy";
+      copyBtn.classList.remove("copied");
+    }, 1500);
+  });
+</script>
+
+
+</body>
+</html> 

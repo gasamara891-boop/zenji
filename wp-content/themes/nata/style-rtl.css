@@ -1,0 +1,77 @@
+body{ direction:rtl; unicode-bidi:embed; text-align: right; }
+.owl-carousel, .bx-wrapper { direction: ltr; }
+.owl-carousel .owl-item { direction: rtl; }
+.text-start { text-align: right!important; }
+.text-end { text-align: left!important; }
+
+/* Slick slider */
+[dir='rtl'] .slick-slide { float: left; }
+.slick-slide {float: left;}
+.slick-slider .slick-track, .slick-slider .slick-list { direction: ltr; }
+/* End Slick slider */
+#rev_slider_1_1_wrapper, #rev_slider_1_1_wrapper *{direction:ltr;}
+
+.ms-3 {
+    margin-right: 1rem!important;
+    margin-left: 0!important;
+}
+
+.single-footer-widget .footer-contact-info li span {
+    display: inline-block;
+}
+.nata-nav .navbar .navbar-nav .nav-item .dropdown-menu li {
+    text-align: right;
+}
+.nata-nav .navbar .navbar-brand {
+    margin-right: 0;	
+}	
+.nata-nav .navbar ul {
+    padding-left: 0;
+}
+.single-footer-widget ul {
+    padding-left: 0;
+}
+.single-footer-widget ul li:last-child {
+    margin-left: 0;
+}
+/* .offset-lg-2 {
+    margin-right: 16.66666667%;
+    margin-left: 0 !important;
+} */
+.form-control {
+    text-align: right;
+}
+.single-team ul {
+    padding-left: 0;
+}
+
+.navbar .navbar-nav .nav-item .dropdown-menu {
+    text-align: right;
+}
+.works-tabs .nav-tabs {
+    padding-right: 0;
+}
+.read-more {
+    display: inline-block;
+}
+
+.complate-project-slide.owl-theme .owl-nav .owl-prev, .complate-project-slide.owl-theme .owl-nav .owl-next {
+    left: 0;
+}
+
+@media only screen and (max-width: 767px){
+    .nata-responsive-nav  .mean-container a.meanmenu-reveal {left: 0px !important; right: auto !important;}
+    .nata-responsive-nav .nata-responsive-menu.mean-container .mean-nav ul li a.mean-expand { text-align: start;}
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .nata-responsive-nav  .mean-container a.meanmenu-reveal {left: 0px !important; right: auto !important;}
+    .nata-responsive-nav .nata-responsive-menu.mean-container .mean-nav ul li a.mean-expand { text-align: start;}
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+   
+}
