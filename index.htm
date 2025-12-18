@@ -235,6 +235,133 @@ button.copied {
 }
 
 
+/* Open button */
+.open-book {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg,#00f0ff,#9b5cff);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+/* Overlay */
+.book-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  padding: 20px;
+}
+
+
+
+/* Book container */
+.book {
+  max-width: 800px;
+  width: 100%;
+  min-height: 420px;
+  margin: auto;
+  display: flex;
+  border-radius: 24px;
+  background: linear-gradient(145deg,#0b102e,#060918);
+  box-shadow: 0 40px 120px rgba(0,240,255,.25);
+  position: relative;
+}
+
+
+/* Pages */
+.page {
+  flex: 1;
+  padding: 4px;
+  color: #fff;
+}
+
+/* Divider */
+.page.left {
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+
+
+
+
+
+
+
+
+
+.page.left h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  background: linear-gradient(90deg,#00f0ff,#9b5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page.left p {
+  margin-top: 20px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* Inputs */
+.page.right input,
+.page.right textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  padding: 12px 0;
+  margin-bottom: 22px;
+  color: #fff;
+  outline: none;
+}
+
+.page.right textarea {
+  height: 90px;
+  resize: none;
+}
+
+/* Button */
+.page.right button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg,#00f0ff,#9b5cff);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Close */
+.book-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 22px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+/* 🔥 MOBILE BREAKPOINT */
+@media (max-width: 768px) {
+  .book {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .page {
+    padding: 4px;
+  }
+
+  .page.left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+}
+
 
 
 /*# sourceURL=wp-emoji-styles-inline-css */
@@ -381,7 +508,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
                     <div class="nata-responsive-menu">
                         <div class="logo">
                             <a href="#" class="mobile-brand">
-                                                                <img src="wp-content/uploads/logo.png" alt="ZENJI" width="120px">
+                                                                <img src="wp-content/uploads/logo.jpeg" alt="ZENJI" width="120px">
                                                             </a>
                         </div>
                         <div class="collapse navbar-collapse mean-menu" id="mobileNav">
@@ -395,7 +522,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
 <li id="menu-item-220" class="menu-item menu-item-type-custom menu-item-object-custom "><a title="Team" href="#team" aria-haspopup="true" aria-expanded="false" class=" nav-link">Team</a>
 
 </li>
-<li id="menu-item-391" class="menu-item menu-item-type-custom menu-item-object-custom  nav-item"><a title="Projects" href="zenji_whitepaper.pdf" aria-haspopup="true" aria-expanded="false" class=" nav-link" target="_blank">Whitepaper</a>
+<li id="menu-item-391" class="menu-item menu-item-type-custom menu-item-object-custom  nav-item"><a title="Projects" href="whitepaper.pdf" aria-haspopup="true" aria-expanded="false" class=" nav-link" target="_blank">Whitepaper</a>
 
 
 </ul>                        </div>
@@ -406,7 +533,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
             <nav class="nata-nav navbar navbar-expand-lg">
                 <div class="container-fluid">
                                             <a class="navbar-brand" href="#">
-                                                            <img src="wp-content/uploads/logo.png" alt="ZENJI" width="120px">
+                                                            <img src="wp-content/uploads/logo.jpeg" alt="ZENJI" width="120px">
                                                     </a>
                     
                     <button class="navbar-toggler menu-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -418,7 +545,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
                     <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                         <ul id="menu-header-menu-1" class="navbar-nav nav-alignment m-auto"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown active menu-item-480 nav-item"><a title="Home" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class=" nav-link" id="menu-item-dropdown-480">Home🧘</a>
 <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-480" role="menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-17 nav-item"><a title="Zenji Whitepaper" href="zenji_whitepaper.pdf" class="dropdown-item" target="_blank">Whitepaper</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-17 nav-item"><a title="Zenji Whitepaper" href="whitepaper.pdf" class="dropdown-item" target="_blank">Whitepaper</a></li>
 </ul>
 </li>
 
@@ -492,7 +619,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasExampleLabel">
                         <a class="navbar-brand" href="#">
-                            <img src="wp-content/uploads/logo.png" alt="ZENJI" width="120px"> 
+                            <img src="wp-content/uploads/logo.jpeg" alt="ZENJI" width="120px"> 
                                                     </a>
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -514,7 +641,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
 				</div>
 				<div class="elementor-element elementor-element-79dfa54 elementor-widget elementor-widget-text-editor" data-id="79dfa54" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									<p class="p">Forged under the rising red sun of Japan, $ZENJI represents discipline, humor, and focus, the three keys to surviving crypto madness. Holders of Zenji aren’t traders, they are meme monks mastering patience.</p>								</div>
+									<p class="p">In a hyper-reactive crypto environment dominated by volatility and hype cycles, $ZENJI positions itself as the first Mindset Meme Asset, combining meme virality with long-term economic design, digital culture, and a sustainable community ecosystem.</p>								</div>
 				</div>
 				<div class="elementor-element elementor-element-43a2a35 elementor-widget elementor-widget-heading" data-id="43a2a35" data-element_type="widget" data-widget_type="heading.default">
 				<div class="elementor-widget-container">
@@ -592,7 +719,8 @@ Every day 7/24 hours</li>
 				</div>
 				</header>
 
-		
+
+     		
 			<div class="page-area mt-80">
 																						
 <div id="post-1747" class="post-1747 page type-page status-publish hentry">
@@ -604,6 +732,14 @@ Every day 7/24 hours</li>
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-04908a4 elementor-widget elementor-widget-Nata_Crypto_Banner" data-id="04908a4" data-element_type="widget" data-widget_type="Nata_Crypto_Banner.default">
 				<div class="elementor-widget-container">
+
+
+
+
+
+
+
+
 					
         <!-- Ccl Hero Area Start -->
 		<div class="ccl-hero-area" style="background-image: url(wp-content/uploads/2025/06/ccl-hero-bg.jpg);">
@@ -614,7 +750,7 @@ Every day 7/24 hours</li>
   <span class="multiple-text"></span>
 </h1>
 
-                                                    <a href="#" class="default-btn">Join Presale Now</a>
+                                                
                         					</div>
 
 					<div class="presale-date d-flex align-items-end justify-content-between">
@@ -622,56 +758,6 @@ Every day 7/24 hours</li>
 							<h3>600+</h3>
 							<p>Community Members</p>
 						</div>
-
-						<div class="presale-date-box">
-                                                            <h2>Presale Ends In</h2>
-                            							<ul class="day-count">
-								<li>
-									<span id="days">0</span>
-									Days								</li>
-								<li>
-									<span id="hours">0</span>
-									Hours								</li>
-								<li>
-									<span id="minutes">0</span>
-									Minutes								</li>
-								<li>
-									<span id="seconds">0</span>
-									Seconds								</li>
-							</ul>
-                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                                // Set your target date here
-                                const targetDate = new Date("2025-12-23T23:59:59").getTime();
-
-                                function updateCountdown() {
-                                    const now = new Date().getTime();
-                                    const timeLeft = targetDate - now; 
-
-                                    if (timeLeft < 0) {
-                                    document.querySelector(".day-count").innerHTML = "<li>Countdown expired</li>";
-                                    clearInterval(countdownInterval);
-                                    return;
-                                    }
-
-                                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                                    document.getElementById("days").textContent = days;
-                                    document.getElementById("hours").textContent = hours;
-                                    document.getElementById("minutes").textContent = minutes;
-                                    document.getElementById("seconds").textContent = seconds;
-                                }
-
-                                // Initial call
-                                updateCountdown();
-
-                                // Update every second
-                                const countdownInterval = setInterval(updateCountdown, 1000);
-                                </script>
-                            							    <p>Join Now Before It is Too Late!</p>
-                            						</div>
 					</div>
                                             <div class="all-shapes">
                             <img decoding="async" src="wp-content/uploads/2025/06/ccl-hero-color.png" class="ccl-hero-color" alt="Image">
@@ -679,33 +765,42 @@ Every day 7/24 hours</li>
                     				</div>
 
 				<div class="ccl-secure-speed d-flex align-items-center justify-content-between">
-                                            <div class="secure-item">
-                            <span>Lightning-fast transactions</span>
-                            <p>Low fees, high speed</p>
-                        </div>
-                                            <div class="secure-item">
-                            <span>DeFi &amp; Staking rewards</span>
-                            <p>Earn passive income</p>
-                        </div>
-                                            <div class="secure-item">
-                            <span>Multi-chain compatibility</span>
-                            <p>Supports Ethereum, BNB, and Solana</p>
-                        </div>
-                                            <div class="secure-item">
-                            <span>Smart contract audited</span>
-                            <p>Fully verified and secure</p>
-                        </div>
+                          
                     				</div>
 			</div>
 		</div>
 		<!-- Ccl Hero Area End -->
 
-        				</div>
+
+
+    
+
+        				</div> 
 				</div>
 					</div>
 		</div>
 					</div>
 		</section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-779bd75 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="779bd75" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-no">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3b4f2a6" data-id="3b4f2a6" data-element_type="column">
@@ -722,51 +817,34 @@ Every day 7/24 hours</li>
 						<div class="ccl-about-slide-widget">
 							
                             <p class="title">
-In the chaos of the market, we stay calm.
-When others FOMO, we breathe.
- <br> When the charts bleed, we meditate.
+CalmFi: The Future of Mindful Meme Finance
 
-$ZENJI isn’t just a meme coin — it’s a mindset.
-<br>
-It’s about discipline over degen.
-<br>
-Stillness over panic.
-<br>
-Peace before profit.
-<br>
+$ZENJI is a next-generation meme coin engineered to introduce  CalmFi <br>  — a new financial paradigm centered on emotional discipline, <br> cultural identity, and community-driven growth.
+
+
 </p>
+
+<h5><a href="whitepaper.pdf" target="_blank" class="wp-block-button__link"> More</a></h5>
 							<div class="ccl-about-slider owl-carousel  owl-theme">
                                                                     <div class="item">
                                         <div class="ccl-about-widget">
                                             <h3>Solution</h3>
 
-                                            <h5>Lightning-Fast Transactions</h5>
-                                            <p>Our blockchain ensures near-instant transfers with minimal fees.</p>
-
-                                            <h6>Eco-Friendly Consensus</h6>
-                                            <p>Utilizing [Proof-of-Stake (PoS) / Layer-2 Scaling / Green Mining] to reduce energy consumption.</p>
+                                            <p>$ZENJI introduces CalmFi, a new financial paradigm centered on emotional discipline, cultural identity, and community-driven growth.</p>
                                         </div>
                                     </div>
                                                                     <div class="item">
                                         <div class="ccl-about-widget">
-                                            <h3>Speed &amp; Efficiency</h3>
-
-                                            <h5>Real-Time Settlement</h5>
-                                            <p>Execute financial operations in seconds with ultra-low latency.</p>
-
-                                            <h6>Sustainable Infrastructure</h6>
-                                            <p>Built on next-gen, energy-efficient technologies for a significantly smaller carbon footprint.</p>
+                                        <h3>Culture + Utility Model</h3>
+                                            <p>
+$ZENJI introduces a Culture + Utility model—known as CalmFi—designed to build sustainable momentum in a chaotic marketplace.</p>
                                         </div>
                                     </div>
                                                                     <div class="item">
                                         <div class="ccl-about-widget">
-                                            <h3>Scalability</h3>
-
-                                            <h5>Scalable Architecture</h5>
-                                            <p>Capable of handling thousands of transactions per second without delays.</p>
-
-                                            <h6>Green Protocols</h6>
-                                            <p>Incorporating Layer-2 rollups and eco-aware validation techniques to ensure long-term sustainability.</p>
+                                          <h3>Long-Term Vision</h3>
+                                            <p>$ZENJI combines meme virality with long-term economic design, digital culture, and a sustainable community ecosystem.</p>
+                                            
                                         </div>
                                     </div>
                                 							</div>
@@ -774,16 +852,13 @@ Peace before profit.
 					</div>
 					<div class="col-lg-6">
 						<div class="ccl-about-content">
-							<p><strong>Our mission</strong> At $ZENJI, our mission is to build a secure, transparent, and utility-driven digital asset that empowers individuals to participate confidently in the decentralized economy.
+							<p><h4>Our mission:</h4> Vision & Future Impact : ZENJI aims to become one of the most recognized meme brands globally—uniting crypto culture, Zen philosophy, and DeFi innovation into a lasting digital legacy.Where typical meme coins offer noise, ZENJI offers identity.
+Where others create hype,  ZENJI creates culture.
+Where others burn out, ZENJI compounds.ZENJI is the future of calm, confident, and community-powered crypto evolution.
 
 We are committed to creating long-term value through blockchain innovation, strong security standards, and sustainable token economics. By combining cutting-edge technology with real-world use cases, $ZENJI aims to bridge the gap between traditional finance and the future of decentralized wealth.</p>
-							<h5>⚠️ Key Challenges in Traditional Cryptocurrencies</h5>
-							<ul>
-								<li>⚡ Slow transaction speeds causing delays and frustration.</li>
-								<li>💸 High fees making small transactions uneconomical.</li>
-								<li>🌍 Environmental concerns over energy-intensive mining processes.</li>
-								<li>🔒 Security vulnerabilities leading to hacks and loss of funds.</li>
-							</ul>
+					
+					
                                                             <div class="image">
   <video 
     autoplay
@@ -830,34 +905,36 @@ We are committed to creating long-term value through blockchain innovation, stro
 					<div class="col-lg-4">
 						<div class="ccl-token-chart-list">
 							<h4>Total Supply: 1 Billion Tokens</h4>
+              <h4>4.2 Distribution</h4>
 
                                                             <div class="progress-item">
-                                    <span class="progress-label"><strong>90% Liquidity Pool:</strong> 900,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style1" style="width: 90%">
+                                    <span class="progress-label"><strong>70% Liquidity Pool:</strong> 700,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+
+                                        <div class="progress-bar style1" style="width: 70%">
                                         </div>
                                     </div>
-                                    <span class="number">90%</span>
+                                    <span class="number">70%</span>
                                 </div>
                                                             <div class="progress-item">
-                                    <span class="progress-label"><strong>Marketing, Quests, Airdrop:</strong> 50,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style2" style="width: 5%">
+                                    <span class="progress-label"><strong>Marketing, Quests, Airdrop:</strong> 150,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style2" style="width: 15%">
+                                        </div>
+                                    </div>
+                                    <span class="number">15%</span>
+                                </div>
+                                                            <div class="progress-item">
+                                    <span class="progress-label"><strong>Zen Vault:</strong> 100,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style3" style="width: 10%">
+                                        </div>
+                                    </div>
+                                    <span class="number">10%</span>
+                                </div>
+                                                            <div class="progress-item">
+                                    <span class="progress-label"><strong>Dev &amp; Team:</strong>50,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar style4" style="width: 5%">
                                         </div>
                                     </div>
                                     <span class="number">5%</span>
-                                </div>
-                                                            <div class="progress-item">
-                                    <span class="progress-label"><strong>Zen Vault:</strong> 30,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style3" style="width: 3%">
-                                        </div>
-                                    </div>
-                                    <span class="number">3%</span>
-                                </div>
-                                                            <div class="progress-item">
-                                    <span class="progress-label"><strong>Dev &amp; Team:</strong>20,000,000</span>                                    <div class="progress" role="progressbar" aria-label="example" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style4" style="width: 2%">
-                                        </div>
-                                    </div>
-                                    <span class="number">2%</span>
                                 </div>
                                                             
                                                 
@@ -867,7 +944,12 @@ We are committed to creating long-term value through blockchain innovation, stro
 						<div class="ccl-token-chart-widget">
 							<h4>Total Supply and Distribution</h4>
                                                             <div class="chart-img">
-                                    <img decoding="async" src="wp-content/uploads/Gemini_Generated_Image_ansaufansaufansa (1).png" alt="Chart Image" ;">
+                                    
+
+
+<img src="wp-content/uploads/ChatGPT Image Dec 18, 2025, 02_40_35 PM.png" alt="Image" class="">
+
+
                                 </div>
                             						</div>
 					</div>
@@ -1032,62 +1114,28 @@ We are committed to creating long-term value through blockchain innovation, stro
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="ccl-payment-content">
-							<h2>How to buy</h2>
+							
 							<div class="d-flex align-items-end">
                                                                     <div class="image">
-                                        <img decoding="async" src="wp-content/uploads/WhatsApp Image 2025-12-16 at 1.48.40 PM (1).jpeg" alt="Image">
+
+
+
+
+
+
+
+                                                                      
                                     </div>
-                                								<div class="widget">
-									<h4>Accepted payment methods</h4>
-									<ul>
-	<li>
-		Ethereum (ETH) – ERC20
-	</li>
-	<li>
-		Binance Coin (BNB) – BEP20
-	</li>
-	<li>
-		Tether (USDT) – ERC20/BEP20
-	</li>
-	<li>
-		Other Supported Cryptos (If Any)
-	</li>
-</ul>								</div>
+                                							
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="ccl-methods-card-widget">
 							<div class="row g-4">
-                                                                    <div class="col-lg-6 col-md-6">
-                                        <div class="method-card">
-                                            <span>01</span>
-                                            <h3>Set up a crypto wallet</h3>
-                                            <p>Set up a crypto wallet like MetaMask or Trust Wallet to securely store and manage your Tokens with ease!</p>
-                                        </div>
-                                    </div>
-                                                                    <div class="col-lg-6 col-md-6">
-                                        <div class="method-card">
-                                            <span>02</span>
-                                            <h3>Fund your wallet</h3>
-                                            <p>Add funds to your wallet by purchasing or transferring ETH, BNB, or USDT from a crypto exchange.</p>
-                                        </div>
-                                    </div>
-                                                                    <div class="col-lg-6 col-md-6">
-                                        <div class="method-card">
-                                            <span>03</span>
-                                            <h3>Connect your wallet</h3>
-                                            <p>Set up a crypto wallet like MetaMask or Trust Wallet to securely store and manage your Tokens with ease!</p>
-                                        </div>
-                                    </div>
-                                                                    <div class="col-lg-6 col-md-6">
-                                        <div class="method-card">
-                                            <span>04</span>
-                                            <h3>Receive your tokens</h3>
-                                            <p>Receive your tokens instantly and join the future of decentralized finance with Nata Coin!</p>
-                                        </div>
-                                    </div>
-                                							</div>
+                                                                  
+                                                        
+                    
                                                             <p class="latest-tag">
                                     Need help? Join our <a href="https://t.me/zenjimem" target="_blank" class="tm">Telegram</a> or <a href="https://x.com/Zenjiclan" target="_blank" class="dd">Twitter(X)</a> for 24/7 support!                                </p>
                             						</div>
@@ -1136,17 +1184,10 @@ Ethan Carter                         </h3>
                                     <img decoding="async" src="wp-content/uploads/2025/06/team2.jpg" alt="Image">
                                 </div>
                                                         <h3>
-                                Brian Thomas                            </h3>
+                                Celine Thomas                            </h3>
                             <p>CMO &amp; Growth Strategist</p>
                         </div>
-                                            <div class="ico-team-item">
-                                                            <div class="image">
-                                    <img decoding="async" src="wp-content/uploads/2025/06/team3.jpg" alt="Image">
-                                </div>
-                                                        <h3>
-                                Cheryle Weise                            </h3>
-                            <p>CTO &amp; Blockchain Lead</p>
-                        </div>
+                                            
                                             <div class="ico-team-item">
                                                             <div class="image">
                                     <img decoding="async" src="wp-content/uploads/2025/06/team3.jpg" alt="Image">
@@ -1497,66 +1538,10 @@ Ethan Carter                         </h3>
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-226a123 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="226a123" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-47e2201" data-id="47e2201" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-0589d1a elementor-widget elementor-widget-classic-testimonials-widget" data-id="0589d1a" data-element_type="widget" data-widget_type="classic-testimonials-widget.default">
-				<div class="elementor-widget-container">
-					
-        <!-- Ccl Testimonial Area Start -->
-		<div class="ccl-testimonial-area">
-			<div class="container">
-				<div class="inner-testimonial-area" style="background-image: url(wp-content/uploads/2025/06/ccl-testimonial-bg.jpg);">
-					<div class="row">
-						<div class="col-lg-5">
-							<div class="ccl-testimonial-content">
-								<h2>Testimonials</h2>
-							</div>
-						</div>
-						<div class="col-lg-7">
-							<div class="ccl-testimonial-slider owl-carousel owl-theme wow animate__animated animate__fadeInUp delay-0-4s">
-                                                                    <div class="ccl-testimonial-widget">
-                                                                                    <div class="icon">
-                                                <img decoding="async" src="wp-content/uploads/2025/06/qoute.png" alt="Image">
-                                            </div>
-                                                                                <h5>"I was impressed by how easy it was to buy and stake $ZENJI. The team is highly responsive, and the project has great potential. Looking forward to its future growth!"</h5>
 
-                                        <h6>Audrey Smith</h6>
-                                        <p>Blockchain Enthusiast</p>
-                                    </div>
-                                                                    <div class="ccl-testimonial-widget">
-                                                                                    <div class="icon">
-                                                <img decoding="async" src="wp-content/uploads/2025/06/qoute.png" alt="Image">
-                                            </div>
-                                                                                <h5>"$ZENJI makes crypto feel approachable. The interface is user-friendly and staking rewards are attractive. This could become a major player in the space."</h5>
 
-                                        <h6>Michael Torres</h6>
-                                        <p>Crypto Investor</p>
-                                    </div>
-                                                                    <div class="ccl-testimonial-widget">
-                                                                                    <div class="icon">
-                                                <img decoding="async" src="wp-content/uploads/2025/06/qoute.png" alt="Image">
-                                            </div>
-                                                                                <h5>I'm thrilled with the transparency and communication from the $ZENJI team. Their regular updates and clear roadmap really stand out in the blockchain industry.</h5>
 
-                                        <h6>Lena Wang</h6>
-                                        <p>DeFi Analyst</p>
-                                    </div>
-                                							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Ccl Testimonial Area End -->
-
-        				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
+    
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-281a8e9 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="281a8e9" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-no">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-feb7587" data-id="feb7587" data-element_type="column">
@@ -1702,9 +1687,9 @@ Ethan Carter                         </h3>
                     <div class="col-lg-4">
                         <div class="ccl-newsletter-box">
                             <form class="newsletter-form mailchimp" method="post">
-                                <input type="email" class="form-control shadow-none memail" placeholder="Enter your email" name="EMAIL" required="">
-                                                                    <button type="submit" class="default-btn">
-                                        Subscribe                                    </button>
+                                
+                                                                    <button class="open-book" onclick="openBook()">Subscribe</button>
+                                                                         
                                                                 <p class="mchimp-errmessage" style="display: none;"></p>
                                 <p class="mchimp-sucmessage" style="display: none;"></p>
                             </form>
@@ -1868,6 +1853,43 @@ Ethan Carter                         </h3>
 				</div>
 		</div>		</footer>
 	</div><!-- #page -->
+
+
+
+
+
+
+<div id="bookModal" class="book-overlay">
+  <div class="book">
+    <span class="book-close" onclick="closeBook()">✕</span>
+
+    <div class="page left">
+      <h2>Get in Touch</h2>
+      <p>
+        Let’s talk partnerships, support or ideas.<br>
+        We're waiting to hear from you!
+      </p>
+    </div>
+
+    <div class="page right">
+     <form action="https://formspree.io/f/xrezznel" method="POST" class="contact-form">
+  <input type="text" name="full_name" placeholder="Full Name" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
+
+
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/nata/*"},{"not":{"href_matches":["/nata/wp-*.php","/nata/wp-admin/*","/nata/wp-content/uploads/*","/nata/wp-content/*","/nata/wp-content/plugins/*","/nata/wp-content/themes/nata/*","/nata/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
@@ -2051,7 +2073,22 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
       copyBtn.classList.remove("copied");
     }, 1500);
   });
+
+  
 </script>
+
+
+
+<script>
+function openBook() {
+  document.getElementById("bookModal").style.display = "flex";
+}
+
+function closeBook() {
+  document.getElementById("bookModal").style.display = "none";
+}
+</script>
+
 
 
 </body>
