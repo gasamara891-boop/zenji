@@ -364,6 +364,67 @@ button.copied {
 
 
 
+/* PUMP.FUN LINK */
+.pump-link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 35px auto 0;
+  padding: 0 15px;
+}
+
+.pump-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 16px 30px;
+  max-width: 100%;
+
+  background: linear-gradient(135deg, #14f195, #00c2ff);
+  color: #050505;
+
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 0 25px rgba(20,241,149,0.25);
+
+  transition: all 0.3s ease;
+}
+
+.pump-link-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(20,241,149,0.5);
+  color: #000;
+}
+
+.pump-icon {
+  font-size: 20px;
+}
+
+.pump-arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.pump-link-btn:hover .pump-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .pump-link-btn {
+    width: 100%;
+    padding: 15px 18px;
+    font-size: 14px;
+    gap: 8px;
+  }
+}
+
 /*# sourceURL=wp-emoji-styles-inline-css */
 </style>
 <style id='classic-theme-styles-inline-css' type='text/css'>
@@ -955,17 +1016,7 @@ video {
       Your browser does not support HTML5 video.
     </video>
 
-    <div class="overlay">
-      <div class="btn-row">
-        <button
-          class="btn btn-primary"
-          id="playBtn"
-          type="button"
-        >
-          ▶ Play
-        </button>
-      </div>
-    </div>
+    
 
   </div>
 
@@ -1501,12 +1552,25 @@ Ethan Carter                         </h3>
       <div class="contract-live hidden" id="contractLive">
         <span class="chain-badge sol">SOL</span>
         <code id="contractAddress">
-          Coming Soon...
+          DmecyrPkAg4VsumcYoF6WCYnrTddTrN9tP5bNjR9pump
         </code>
-        <button id="copyBtn" disabled>Copy</button>
+        <button id="copyBtn">Copy</button>
       </div>
     </div>
   </div>
+  <!-- PUMP.FUN BUY / JOIN BUTTON -->
+<div class="pump-link-wrapper">
+  <a
+    href="https://join.pump.fun/HSag/9gdms3gd"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="pump-link-btn"
+  >
+    <span class="pump-icon">🚀</span>
+    <span>Explore $ZENJI on Pump.fun</span>
+    <span class="pump-arrow">↗</span>
+  </a>
+</div>
 </section>
 
 <!-- GSAP -->
