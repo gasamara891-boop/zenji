@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
@@ -516,7 +516,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
                               <li id="menu-item-480" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent   active "><a title="Home 🧘" href="#"  aria-haspopup="true" aria-expanded="false" >Home🧘 </a>
 
 </li>
-<li id="menu-item-172" class="menu-item menu-item-type-custom menu-item-object-custom  nav-item"><a title="Tokenomics" href="#tokenomics"  aria-haspopup="true" aria-expanded="false" class=" nav-link">Tokenomics</a>
+<li id="menu-item-172" class="menu-item menu-item-type-custom menu-item-object-custom  nav-item"><a title="Roadmap" href="#tokenomics"  aria-haspopup="true" aria-expanded="false" class=" nav-link">Roadmap</a>
 
 </li>
 <li id="menu-item-220" class="menu-item menu-item-type-custom menu-item-object-custom "><a title="Team" href="#team" aria-haspopup="true" aria-expanded="false" class=" nav-link">Team</a>
@@ -549,7 +549,7 @@ var woocommerce_params = {"ajax_url":"/nata/wp-admin/admin-ajax.php","wc_ajax_ur
 </ul>
 </li>
 
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-220 nav-item"><a title="Tokenomics" href="#tokenomics"  aria-haspopup="true" aria-expanded="false" class=" nav-link" >Tokenomics</a>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-220 nav-item"><a title="Roadmap" href="#tokenomics"  aria-haspopup="true" aria-expanded="false" class=" nav-link" >Roadmap</a>
 <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-220" role="menu">
 
 
@@ -799,6 +799,252 @@ Every day 7/24 hours</li>
 
 
 
+<style>
+
+/* ANIMATED CRYPTO BACKGROUND */
+
+
+/* CENTERED VIDEO CARD */
+
+.card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  width: min(90vw, 380px);
+  max-height: 95vh;
+
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.7),
+    0 0 35px rgba(70,110,255,0.12);
+}
+
+.video-box {
+  position: relative;
+  width: 100%;
+  background: #000;
+  
+
+  /* Preserve vertical video shape */
+  aspect-ratio: 9 / 16;
+
+  max-height: 95vh;
+}
+
+/* SHOW THE ENTIRE VIDEO */
+
+video {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  background: #000;
+
+  cursor: pointer;
+}
+
+/* PLAY BUTTON */
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 20px 15px 25px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(0,0,0,0.7)
+  );
+
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.btn {
+  padding: 13px 30px;
+  border-radius: 50px;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+
+  box-shadow: 0 0 25px rgba(255,255,255,0.25);
+}
+
+.btn-primary:hover {
+  background: #ff3366;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* HIDE OVERLAY WHILE PLAYING */
+
+.card.playing .overlay {
+  opacity: 0;
+}
+
+.card.playing:hover .overlay {
+  opacity: 1;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .card {
+    width: min(92vw, 380px);
+    border-radius: 16px;
+  }
+
+  .video-box {
+    max-height: 90vh;
+    margin: 10px auto;
+  }
+
+  .coin {
+    font-size: 20px;
+  }
+}
+</style>
+
+
+
+
+
+<!-- VIDEO -->
+
+<div class="card" id="videoCard">
+
+  <div class="video-box">
+
+    <video
+      id="myVideo"
+      loop
+      playsinline
+      controls
+      preload="metadata"
+      poster="wp-content/thumbnail.jpg"
+    >
+      <source
+        src="wp-content/video.mp4"
+        type="video/mp4"
+      >
+
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div class="overlay">
+      <div class="btn-row">
+        <button
+          class="btn btn-primary"
+          id="playBtn"
+          type="button"
+        >
+          ▶ Play
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+const video = document.getElementById("myVideo");
+const card = document.getElementById("videoCard");
+const playBtn = document.getElementById("playBtn");
+
+playBtn.addEventListener("click", async () => {
+  try {
+    if (video.paused) {
+      await video.play();
+    } else {
+      video.pause();
+    }
+  } catch (error) {
+    console.log("Video playback failed:", error);
+  }
+});
+
+video.addEventListener("play", () => {
+  card.classList.add("playing");
+  playBtn.innerHTML = "❚❚ Pause";
+});
+
+video.addEventListener("pause", () => {
+  card.classList.remove("playing");
+  playBtn.innerHTML = "▶ Play";
+});
+
+video.addEventListener("ended", () => {
+  card.classList.remove("playing");
+  playBtn.innerHTML = "▶ Replay";
+});
+
+// Double-click video to enter or exit fullscreen
+video.addEventListener("dblclick", async () => {
+  try {
+    if (!document.fullscreenElement) {
+      if (video.requestFullscreen) {
+        await video.requestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      }
+    } else {
+      await document.exitFullscreen();
+    }
+  } catch (error) {
+    console.log("Fullscreen unavailable:", error);
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-779bd75 elementor-section-full_width white-body elementor-section-height-default elementor-section-height-default" data-id="779bd75" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -900,41 +1146,24 @@ We are committed to creating long-term value through blockchain innovation, stro
         <!-- Ccl Token Chart Area Start -->
 		<div id="tokenomics" class="ccl-token-chart-area pb-120">
 			<div class="container">
-				<h2 class="ccl-chart-heading">Tokenomics</h2>
+			
 				<div class="row align-items-end">
 					<div class="col-lg-4">
 						<div class="ccl-token-chart-list">
-							<h4>Total Supply: 1 Billion Tokens</h4>
-              <h4>4.2 Distribution</h4>
+							<h4>Total Supply: 1 Billion Tokens | Fair Launch </h4>
+          
 
-                                                            <div class="progress-item">
-                                    <span class="progress-label"><strong>70% Liquidity Pool:</strong> 700,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-
-                                        <div class="progress-bar style1" style="width: 70%">
-                                        </div>
-                                    </div>
-                                    <span class="number">70%</span>
+                                                
+                                  
                                 </div>
-                                                            <div class="progress-item">
-                                    <span class="progress-label"><strong>Marketing, Quests, Airdrop:</strong> 150,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style2" style="width: 15%">
-                                        </div>
-                                    </div>
-                                    <span class="number">15%</span>
+                              
+                                  
                                 </div>
-                                                            <div class="progress-item">
-                                    <span class="progress-label"><strong>Zen Vault:</strong> 100,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style3" style="width: 10%">
-                                        </div>
-                                    </div>
-                                    <span class="number">10%</span>
+                                            
+                                    
                                 </div>
-                                                            <div class="progress-item">
-                                    <span class="progress-label"><strong>Dev &amp; Team:</strong>50,000,000</span><div class="progress" role="progressbar" aria-label="example" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar style4" style="width: 5%">
-                                        </div>
-                                    </div>
-                                    <span class="number">5%</span>
+                                      
+                                  
                                 </div>
                                                             
                                                 
@@ -942,22 +1171,13 @@ We are committed to creating long-term value through blockchain innovation, stro
 					</div>
 					<div class="col-lg-8">
 						<div class="ccl-token-chart-widget">
-							<h4>Total Supply and Distribution</h4>
-                                                            <div class="chart-img">
-                                    
-
-
-<img src="wp-content/uploads/ChatGPT Image Dec 18, 2025, 02_40_35 PM.png" alt="Image" class="">
-
-
-                                </div>
+							
+                                                        
                             						</div>
 					</div>
 				</div>
 			</div>
-                            <div class="all-shapes">
-                    <img decoding="async" src="wp-content/uploads/2025/07/ccl-chart-color.png" class="ccl-chart-color" alt="Image">
-                </div>
+                            
             		</div>
 		<!-- Ccl Token Chart Area End -->
 
@@ -1278,7 +1498,7 @@ Ethan Carter                         </h3>
   <div class="info-grid">
     <div class="info-card"><span class="label">$ZENJI</span><small>Symbol</small></div>
     <div class="info-card"><span class="label">1 BILLION</span><small>Total Supply</small></div>
-    <div class="info-card"><span class="label">BSC</span><small>Network</small></div>
+    <div class="info-card"><span class="label">SOL</span><small>Network</small></div>
     <div class="info-card"><span class="label">18</span><small>Decimal</small></div>
   </div>
 
@@ -1293,7 +1513,7 @@ Ethan Carter                         </h3>
       </div>
 
       <div class="contract-live hidden" id="contractLive">
-        <span class="chain-badge bsc">BSC</span>
+        <span class="chain-badge sol">SOL</span>
         <code id="contractAddress">
           Coming Soon...
         </code>
@@ -1322,95 +1542,7 @@ Ethan Carter                         </h3>
 						<div class="elementor-element elementor-element-cc5b63c elementor-widget elementor-widget-Nata_Faq_Section" data-id="cc5b63c" data-element_type="widget" data-widget_type="Nata_Faq_Section.default">
 				<div class="elementor-widget-container">
 					
-        <!-- Ccl Question Area Start -->
-		<div id="faq" class="ccl-question-area">
-			<div class="container-fluid ico-container-fluid">
-				<div class="inner-ccl-question-area">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-4"> 
-								<div class="ccl-question-content">
-                                    									    <h2>Frequently Asked Questions</h2>
-                                    									<div class="contact">
-                                                                                    <span>Have any questions?</span>
-                                        										<h5>Call:											<a href="tel:+14447058944">+1 501 448 6220</a>
-										</h5>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-8">
-								<div class="ccl-question-widget">
-									<div class="accordion accordion-flush" id="faqAccordion2">
-                                                                                                                            <div class="accordion-item">
-                                                <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                                    Q1: Is my investment safe?                                                </button>
-                                                <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion2">
-                                                    <div class="accordion-body">
-                                                        <strong>Answer:</strong> We prioritize security by using industry-standard blockchain technology, smart-contract best practices, and transparent tokenomics. While every investment carries risk, $ZENJI is designed with long-term sustainability, liquidity support, and security in mind. Always invest responsibly and only what you can afford to hold long-term.                                                </div>
-                                                </div>
-                                            </div>
-                                                                                                                                                                    <div class="accordion-item">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                                    Q2: What's the Launch Date?                                             </button>
-                                                <div id="collapse2" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
-                                                    <div class="accordion-body">
-                                                        <strong>Answer:</strong>December 23rd 2025                                               </div>
-                                                </div>
-                                            </div>
-                                                                                                                                                                    <div class="accordion-item">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                                    Q3: What measures are in place to protect user data?                                             </button>
-                                                <div id="collapse3" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
-                                                    <div class="accordion-body">
-                                                        <strong>Answer:</strong>We use strong encryption, secure servers, and strict access controls to protect user data. Sensitive operations are handled on-chain where possible, minimizing data exposure, and we follow best security practices to prevent unauthorized access.                                               </div>
-                                                </div>
-                                            </div>
-                                                                                                                                                                    <div class="accordion-item">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                                    Q4: Are team tokens locked?                                              </button>
-                                                <div id="collapse4" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
-                                                    <div class="accordion-body">
-                                                        <strong>Answer:</strong>Yes. Team tokens are locked and subject to a vesting schedule to ensure long-term commitment, prevent sudden sell-offs, and align the team’s incentives with the growth of the project.                                               </div>
-                                                </div>
-                                            </div>
-                                                                                                                                                                    <div class="accordion-item">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                                                    Q5: What cryptocurrencies can I use to buy $ZENJI Tokens?                                                </button>
-                                                <div id="collapse5" class="accordion-collapse collapse " data-bs-parent="#faqAccordion2">
-                                                    <div class="accordion-body">
-                                                        <strong>Answer:</strong> $ZENJI tokens can be purchased using supported network currencies such as BNB (on BSC) or ETH (on Ethereum), depending on the active sale phase. Supported payment options will be clearly announced before the ICO goes live.                                               </div>
-                                                </div>
-                                            </div>
-                                                                                									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Ccl Question Area End -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
 
 
 
@@ -1574,39 +1706,15 @@ Ethan Carter                         </h3>
   </video>
 </div>
 
-                                <div class="content">
-                                    <span>December 10, 2025</span>
-                                    <h3>
-                                        <a href="#/nata/step-by-step-guide-how-to-buy-and-store-nata-securely/">Step-by-step guide how to buy and store $ZENJI securely</a>
-                                    </h3>
-                                                                            <a href="#/nata/step-by-step-guide-how-to-buy-and-store-nata-securely/" class="read-more2">Coming soon</a>
-                                                                    </div>
+                              
                             </div>
                         </div>
                                                                                                     
 					<div class="col-lg-6">
 						<div class="ccl-blog-item">
-                                                                                                                    <div class="item">
-                                    <span>December 13, 2025</span>
-                                    <h3>
-                                        <a href="#/nata/nata-sells-out-private-sale-in-record-time/">$ZENJI sells out private sale in record time</a>
-                                    </h3>
-                                                                            <a href="#/nata/nata-sells-out-private-sale-in-record-time/" class="read-more2">Coming soon</a>
-                                                                    </div>
-							                                                            <div class="item">
-                                    <span>December 15, 2025</span>
-                                    <h3>
-                                        <a href="#/nata/why-nata-is-a-game-changer-for-defi-web3/">Why $ZENJI is a game-changer for DeFi &amp; Web3</a>
-                                    </h3>
-                                                                            <a href="#/nata/why-nata-is-a-game-changer-for-defi-web3/" class="read-more2">Coming soon</a>
-                                                                    </div>
-							                                                            <div class="item">
-                                    <span>December 17, 2025</span>
-                                    <h3>
-                                        <a href="#/nata/the-golden-state-announce-legacy-nft-collection/">The golden state announce legacy NFT collection</a>
-                                    </h3>
-                                                                            <a href="#/nata/the-golden-state-announce-legacy-nft-collection/" class="read-more2">Coming soon</a>
-                                                                    </div>
+                                                                                                        
+							                                                    
+					
 							                            						</div>
 					</div>
 				</div>
@@ -1739,6 +1847,8 @@ Ethan Carter                         </h3>
             </div>
         </div>
 		<!-- Ccl Newsletter Area End -->
+
+    
          
 
         				</div>
